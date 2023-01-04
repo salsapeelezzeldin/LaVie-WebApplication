@@ -1,4 +1,6 @@
 const productModel = require("../../db/models/product.model")
+const orderModel = require("../../db/models/order.model")
+
 const myHelper = require("../../app/helper")
 
 class Product{
@@ -100,6 +102,65 @@ class Product{
             myHelper.resHandler(res, 500, false, e, e.message)
         }
     }
+
+
+    //   Product Reviews
+    //   @description : Add a product review
+    //   @method : POST /api/product/review/addReview/:id
+    //   @access : private/user
+    static addReview = async(req,res) => {
+        try{
+            const productData = await productModel.findById(req.params.id)
+            if(!productData) throw new Error("product not found")
+
+            const ordersData = await orderModel.find({user:req.user._id})
+            let existedProduct
+            await ordersData.forEach(order => {
+                order.orderItems.forEach(item => {
+                    if(item.product == req.params.id) existedProduct = item
+                })
+            })
+            if(!existedProduct) throw new Error("you can not review this product")
+
+            if(!productData.reviews) productData.reviews = []
+            const alreadyReviewed = await productData.reviews.find(review => review.user.toString() == req.user._id.toString())
+            if (alreadyReviewed) throw new Error('you already reviewed this product')
+
+            productData.reviews.push({user: req.user._id, reviewDate:Date.now(), ...req.body})
+            productData.numReviews += 1
+            productData.rating = await productData.reviews.reduce(( prev , cur) => cur.rating + prev, 0) / productData.numReviews
+            
+            await productData.save()
+            myHelper.resHandler(res, 200, true, productData.reviews, "Review has been added")
+        }
+        catch(e){
+            myHelper.resHandler(res, 500, false, e, e.message)
+        }
+    }
+    static productReviews = async(req,res) => {
+        try{
+            const productData = await productModel.findById(req.params.id)
+            if(!productData) throw new Error("product not found")
+            myHelper.resHandler(res, 200, true, productData.reviews, "Review fetched")
+        }
+        catch(e){
+            myHelper.resHandler(res, 500, false, e, e.message)
+        }
+    }
+    static singleReview = async(req,res) => {
+        try{
+            const productData = await productModel.findById(req.params.pID)
+            if(!productData) throw new Error("product not found")
+            if(!productData.reviews) productData.reviews = []
+            const reviewData = await productData.reviews.find(review => review._id.toString() == req.params.rID.toString())
+            if (!reviewData) throw new Error('review not found')
+            myHelper.resHandler(res, 200, true, reviewData, "Review fetched")
+        }
+        catch(e){
+            myHelper.resHandler(res, 500, false, e, e.message)
+        }
+    }
+
 
 }
 module.exports = Product

@@ -72,26 +72,6 @@ const productSchema = mongoose.Schema({
     countInStock: {
         type: Number,
         required: true
-    },
-    numOf5StarsReviews: {
-        type: Number,
-        default: 0
-    },
-    numOf4StarsReviews: {
-        type: Number,
-        default: 0
-    },
-    numOf3StarsReviews: {
-        type: Number,
-        default: 0
-    },
-    numOf2StarsReviews: {
-        type: Number,
-        default: 0
-    },
-    numOf1StarsReviews: {
-        type: Number,
-        default: 0
     }
 }, {
     timestamps: true
