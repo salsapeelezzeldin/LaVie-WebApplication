@@ -21,15 +21,11 @@ router.get("/recommendations/:cat",Auth.authentication, Product.recommendedProdu
 
 
 //Product Reviews
-//all products
+//all product reviews
 router.get("/review/:id",Auth.authentication, Product.productReviews)
-//add product
+//add product review
 router.post("/review/addReview/:id",Auth.authentication, Product.addReview)
-//single product
+//single product review
 router.get("/review/singleReview/:pID/:rID",Auth.authentication, Product.singleReview)
-// //edit product
-// router.put("/editProduct/:id",Auth.authentication, Product.editProduct)
-// //delete product
-// router.delete("/deleteProduct/:id",Auth.authentication, Product.deleteProduct)
 
 module.exports = router
