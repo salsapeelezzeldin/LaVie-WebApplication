@@ -12,6 +12,7 @@ const blogRoutes = require("../routes/blog.routes")
 const productRoutes = require("../routes/product.routes")
 const orderRoutes = require("../routes/order.routes")
 const quizRoutes = require("../routes/quiz.routes")
+const communityRoutes = require("../routes/community.routes")
 
 
 app.use("/api/user/",  userRoutes)
@@ -19,6 +20,7 @@ app.use("/api/blog/",  blogRoutes)
 app.use("/api/product/",  productRoutes)
 app.use("/api/order/",  orderRoutes)
 app.use("/api/quiz/",  quizRoutes)
+app.use("/api/community/",  communityRoutes)
 
 
 app.all("*", (req, res)=> {
