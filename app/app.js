@@ -1,10 +1,11 @@
 const express = require("express")
+const path = require("path")
 const app = express()
 
 require("../db/connect")
 
 app.use(express.json())
-
+app.use(express.static(path.join(__dirname, "../uploads")))
 
 const userRoutes = require("../routes/user.routes")
 const blogRoutes = require("../routes/blog.routes")

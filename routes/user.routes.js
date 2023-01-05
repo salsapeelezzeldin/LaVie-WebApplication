@@ -1,6 +1,8 @@
 const router = require("express").Router()
 const User = require('../app/controller/user.controller')
 const Auth = require("../app/middleware/auth.middleware")
+const upload = require("../app/middleware/fileUpload.middleware")
+
 
 //auth
 router.post("/register", User.register)
@@ -27,6 +29,8 @@ router.put("/editprofile",Auth.authentication, User.editProfile)
 router.delete("/deleteProfile",Auth.authentication, User.deleteProfile)
 //change password
 router.post("/changePassword",Auth.authentication, User.changePassword)
+//change profile picture
+router.patch("/profilePic",Auth.authentication, upload.single("img"), User.profilePic)
 
 
 //add level

@@ -3,7 +3,11 @@ const productModel = require("../../db/models/product.model")
 
 const myHelper = require("../../app/helper")
 const mailHelper = require("../../app/sendmail.helper")
-const moment = require('moment');
+
+const fs = require("fs")
+const upload = require("../middleware/fileUpload.middleware")
+const multer = require("multer")
+const moment = require('moment')
 
 
 class User{
@@ -189,6 +193,23 @@ class User{
             req.user.password = req.body.password
             await req.user.save()
             myHelper.resHandler(res, 200, true, req.user, "profile updated")
+        }
+        catch(e){
+            myHelper.resHandler(res, 500, false, e, e.message)
+        }
+    }
+    //   @description :upload profile picture for logged in user
+    //   @method : PATCH /api/user/profilePic
+    //   @access : private 
+    static profilePic = async(req,res)=>{
+        try{
+            if(!req.file) throw new Error("no file found")
+            const ext = req.file.originalname.split(".").pop()
+            const newName = "uploads/"+Date.now()+"testApp."+ext
+            fs.renameSync(req.file.path, newName)
+            req.user.image = newName
+            await req.user.save()
+            myHelper.resHandler(res, 200, true, req.user, "updated")
         }
         catch(e){
             myHelper.resHandler(res, 500, false, e, e.message)
