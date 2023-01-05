@@ -37,4 +37,13 @@ router.post("/addPost/:id",Auth.authentication, Community.addCommunityPost)
 router.get("/singlePost/:cID/:pID",Auth.authentication, Community.singlePost)
 
 
+//Community post reviews
+//all Community post reviews
+router.get("/post/reviews/:cID/:pID",Auth.authentication, Community.postReviews)
+//add Community post review
+router.post("/post/addReview/:cID/:pID",Auth.authentication, Community.addReview)
+//single Community post review
+router.get("/post/singleReview/:cID/:pID/:rID",Auth.authentication, Community.singleReview)
+
+
 module.exports = router

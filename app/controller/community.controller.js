@@ -187,6 +187,68 @@ class Community{
     }
 
 
+    //   community post Reviews
+    //   @description : Add a post review
+    //   @method : POST /api/community/post/addReview/:cID/:pID
+    //   @access : private/user
+    static addReview = async(req,res) => {
+        try{
+            const communityData = await communityModel.findById(req.params.cID)
+            if(!communityData) throw new Error("community not found")
+            if(!communityData.posts) communityData.posts = []
+            let thePost
+            await communityData.posts.forEach((post) =>{
+                if(post._id == req.params.pID){
+                    thePost = post
+                }
+            })
+            if (!thePost) throw new Error('post not found')
+            if(!thePost.reviews) thePost.reviews = []
+            const alreadyReviewed = await thePost.reviews.find(review => review.user.toString() == req.user._id.toString())
+            if (alreadyReviewed) throw new Error('you already reviewed this post')
+
+            thePost.reviews.push({user: req.user._id, reviewDate:Date.now(), ...req.body})
+            thePost.numReviews += 1
+            thePost.rating = await thePost.reviews.reduce(( prev , cur) => cur.rating + prev, 0) / thePost.numReviews
+            
+            await communityData.save()
+            myHelper.resHandler(res, 200, true, thePost.reviews, "Review has been added")
+        }
+        catch(e){
+            myHelper.resHandler(res, 500, false, e, e.message)
+        }
+    }
+    static postReviews = async(req,res) => {
+        try{
+            const communityData = await communityModel.findById(req.params.cID)
+            if(!communityData) throw new Error("community not found")
+            if(!communityData.posts) communityData.posts = []
+            const postData = await communityData.posts.find(post => post._id.toString() == req.params.pID.toString())
+            if (!postData) throw new Error('post not found')
+
+            myHelper.resHandler(res, 200, true, postData.reviews, "Reviews fetched")
+        }
+        catch(e){
+            myHelper.resHandler(res, 500, false, e, e.message)
+        }
+    }
+    static singleReview = async(req,res) => {
+        try{
+            const communityData = await communityModel.findById(req.params.cID)
+            if(!communityData) throw new Error("community not found")
+            if(!communityData.posts) communityData.posts = []
+            const postData = await communityData.posts.find(post => post._id.toString() == req.params.pID.toString())
+            if (!postData) throw new Error('post not found')
+
+            if(!postData.reviews) postData.reviews = []
+            const reviewData = await postData.reviews.find(review => review._id.toString() == req.params.rID.toString())
+            if (!reviewData) throw new Error('review not found')
+            myHelper.resHandler(res, 200, true, reviewData, "Review fetched")
+        }
+        catch(e){
+            myHelper.resHandler(res, 500, false, e, e.message)
+        }
+    }
 
 }
 module.exports = Community
