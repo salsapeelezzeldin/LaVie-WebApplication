@@ -1,0 +1,5597 @@
+{
+	"info": {
+		"_postman_id": "12573809-ca0b-4d3e-8385-ea2be8c0f73b",
+		"name": "La Vie App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24901971"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Authentication",
+					"item": [
+						{
+							"name": "Password",
+							"item": [
+								{
+									"name": "forgot Password",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"email\": \"salsapeel.ezzeldin@gmail.com\"\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseurl}}user/forgotPassword",
+											"host": [
+												"{{baseurl}}user"
+											],
+											"path": [
+												"forgotPassword"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "reset Password",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"email\": \"salsapeel.ezzeldin@gmail.com\",\r\n    \"code\":\"IlX1x\",\r\n    \"password\":\"12345tt\"\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseurl}}user/resetPassword",
+											"host": [
+												"{{baseurl}}user"
+											],
+											"path": [
+												"resetPassword"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Registration",
+							"item": [
+								{
+									"name": "register as admin",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"fullName\":\"admin1\",\r\n    \"email\": \"admin@gmail.com\",\r\n    \"password\": \"2334556\",\r\n    \"roleName\": \"admin\"\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseurl}}user/register",
+											"host": [
+												"{{baseurl}}user"
+											],
+											"path": [
+												"register"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "register as user",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"fullName\":\"salsapeel ezzeldin\",\r\n    \"email\": \"salsapeel.ezzeldin@gmail.com\",\r\n    \"password\": \"2334556\"\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseurl}}user/register",
+											"host": [
+												"{{baseurl}}user"
+											],
+											"path": [
+												"register"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "register as shop",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"fullName\":\"shop1\",\r\n    \"email\": \"sasoezzat44@gmail.com\",\r\n    \"password\": \"2334556\",\r\n    \"roleName\": \"shop\"\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseurl}}user/register",
+											"host": [
+												"{{baseurl}}user"
+											],
+											"path": [
+												"register"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "register as professional",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"fullName\":\"professional\",\r\n    \"email\": \"professional@gmail.com\",\r\n    \"password\": \"2334556\",\r\n    \"roleName\": \"professional\"\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseurl}}user/register",
+											"host": [
+												"{{baseurl}}user"
+											],
+											"path": [
+												"register"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "send Varify Code Again For Register",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"salsapeel.ezzeldin@gmail.com\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseurl}}user/sendVarifyCode",
+									"host": [
+										"{{baseurl}}user"
+									],
+									"path": [
+										"sendVarifyCode"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "varify Email",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"sasoezzat44@gmail.com\",\r\n    \"code\": \"BocyD\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseurl}}user/varifyEmail",
+									"host": [
+										"{{baseurl}}user"
+									],
+									"path": [
+										"varifyEmail"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "login",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{   \r\n    \"email\": \"salsapeel.ezzeldin@gmail.com\",\r\n    \"password\": \"1235678\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseurl}}user/login",
+									"host": [
+										"{{baseurl}}user"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "logout",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"fName\": \"tryyyy\",\r\n    \"lName\": \"tryyyy2\",\r\n    \"age\": 21,\r\n    \"email\":\"tryyy@yhoo.com\",\r\n    \"password\": \"2334556\",\r\n    \"gender\": \"female\"\r\n}\r\n\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseurl}}user/logout",
+									"host": [
+										"{{baseurl}}user"
+									],
+									"path": [
+										"logout"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "logout all",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Mzk4NzhiMTdkNzRmYmE0ZDFmNmNmZjMiLCJpYXQiOjE2NzE0NzA5OTB9.lmCT1b0L5tTjTbrJIXea7iQoiF1_Bo_y0rW8MfDRdak",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseurl}}user/logoutall",
+									"host": [
+										"{{baseurl}}user"
+									],
+									"path": [
+										"logoutall"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Profile",
+					"item": [
+						{
+							"name": "Level",
+							"item": [
+								{
+									"name": "add level",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "{{usertoken}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"level\": \"beginner\"\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseurl}}user/level",
+											"host": [
+												"{{baseurl}}user"
+											],
+											"path": [
+												"level"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "edit level",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "{{usertoken}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"level\": \"advanced\"\r\n}\r\n\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseurl}}user/level",
+											"host": [
+												"{{baseurl}}user"
+											],
+											"path": [
+												"level"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "get level",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "{{usertoken}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseurl}}user/level",
+											"host": [
+												"{{baseurl}}user"
+											],
+											"path": [
+												"level"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "delete level",
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "{{usertoken}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseurl}}user/level",
+											"host": [
+												"{{baseurl}}user"
+											],
+											"path": [
+												"level"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "profile",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{usertoken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseurl}}user/me",
+									"host": [
+										"{{baseurl}}user"
+									],
+									"path": [
+										"me"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "profile",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "{{usertoken}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseurl}}user/me",
+											"host": [
+												"{{baseurl}}user"
+											],
+											"path": [
+												"me"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "1246"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"4de-uDsAJrOwW32jf9FV3gOR7/gI+h8\""
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 05 Jan 2023 12:15:22 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"apiStatus\": true,\n    \"data\": {\n        \"user\": {\n            \"_id\": \"63b4c8ef1fcb86b964ca1c19\",\n            \"email\": \"salsapeel.ezzeldin@gmail.com\",\n            \"fullName\": \"salsapeel ezzeldin\",\n            \"roleName\": \"user\",\n            \"isVarified\": true,\n            \"CartTotalPrice\": 0,\n            \"varifications\": [],\n            \"phoneNumbers\": [],\n            \"shoppingCart\": [],\n            \"createdAt\": \"2023-01-04T00:31:43.925Z\",\n            \"updatedAt\": \"2023-01-05T12:13:45.254Z\",\n            \"rewards\": [\n                {\n                    \"code\": \"fXsmC\",\n                    \"points\": 8,\n                    \"createdAt\": \"2023-01-04T15:10:32.375Z\",\n                    \"expiresAt\": \"2023-01-12T05:50:32.376Z\",\n                    \"_id\": \"63b596e8865fadd6d257d0e5\"\n                }\n            ],\n            \"userQuizes\": [\n                {\n                    \"quiz\": \"63b56bda8dede7da6c5c6cec\",\n                    \"userAnswers\": [\n                        \"a) beginner plant\",\n                        \"b) advanved plant\"\n                    ],\n                    \"TakenAt\": \"2023-01-04T15:10:32.350Z\",\n                    \"status\": true,\n                    \"_id\": \"63b596e8865fadd6d257d0d9\"\n                },\n                {\n                    \"quiz\": \"63b56c688dede7da6c5c6d1c\",\n                    \"userAnswers\": [\n                        \"a) beginner plant\",\n                        \"b) advanved plant\"\n                    ],\n                    \"TakenAt\": \"2023-01-04T15:11:51.167Z\",\n                    \"status\": false,\n                    \"_id\": \"63b5973778edd1ccbdbfe9c0\"\n                }\n            ],\n            \"level\": \"beginner\",\n            \"bookMarks\": [\n                {\n                    \"bookMarkType\": \"plant\",\n                    \"plant\": \"63b5be1385477b55dba99071\",\n                    \"_id\": \"63b63bc49642c783a90221fb\"\n                },\n                {\n                    \"bookMarkType\": \"shop\",\n                    \"shop\": \"63b5bcf3a3cb363fa3656b9e\",\n                    \"_id\": \"63b63c271dbab36286009adc\"\n                },\n                {\n                    \"bookMarkType\": \"plant\",\n                    \"plant\": \"63b5be3585477b55dba9907d\",\n                    \"_id\": \"63b63e6c8dd0c5e5b173b292\"\n                }\n            ],\n            \"image\": \"uploads/1672920825246testApp.jpg\"\n        }\n    },\n    \"message\": \"user profile fetched successfully\"\n}"
+								}
+							]
+						},
+						{
+							"name": "edit profile",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{usertoken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"roleName\": \"user\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseurl}}user/editprofile",
+									"host": [
+										"{{baseurl}}user"
+									],
+									"path": [
+										"editprofile"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete Profile",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2E1ZThmMDk2Y2ViZTUyOTk5YWExNTMiLCJpYXQiOjE2NzE4MTc0NjB9.6RutQfgYcWnIIMx82Dq3mreyuF5mb8C6EKeopHoMqK4",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseurl}}user/deleteProfile",
+									"host": [
+										"{{baseurl}}user"
+									],
+									"path": [
+										"deleteProfile"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "change Password",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{usertoken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"password\": \"1235678\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseurl}}user/changePassword",
+									"host": [
+										"{{baseurl}}user"
+									],
+									"path": [
+										"changePassword"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "upload profile image",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{usertoken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "img",
+											"type": "file",
+											"src": "/G:/Pics/Best Quotes & Status/1428.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseurl}}user/profilePic",
+									"host": [
+										"{{baseurl}}user"
+									],
+									"path": [
+										"profilePic"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "upload profile image",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "{{usertoken}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "img",
+													"type": "file",
+													"src": "/G:/Pics/Best Quotes & Status/1428.jpg"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseurl}}user/profilePic",
+											"host": [
+												"{{baseurl}}user"
+											],
+											"path": [
+												"profilePic"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "1211"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"4bb-hDSINiOyweQ3m30RGlqU+uUHICg\""
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 05 Jan 2023 12:13:45 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"apiStatus\": true,\n    \"data\": {\n        \"_id\": \"63b4c8ef1fcb86b964ca1c19\",\n        \"email\": \"salsapeel.ezzeldin@gmail.com\",\n        \"fullName\": \"salsapeel ezzeldin\",\n        \"roleName\": \"user\",\n        \"isVarified\": true,\n        \"CartTotalPrice\": 0,\n        \"varifications\": [],\n        \"phoneNumbers\": [],\n        \"shoppingCart\": [],\n        \"createdAt\": \"2023-01-04T00:31:43.925Z\",\n        \"updatedAt\": \"2023-01-05T12:13:45.254Z\",\n        \"rewards\": [\n            {\n                \"code\": \"fXsmC\",\n                \"points\": 8,\n                \"createdAt\": \"2023-01-04T15:10:32.375Z\",\n                \"expiresAt\": \"2023-01-12T05:50:32.376Z\",\n                \"_id\": \"63b596e8865fadd6d257d0e5\"\n            }\n        ],\n        \"userQuizes\": [\n            {\n                \"quiz\": \"63b56bda8dede7da6c5c6cec\",\n                \"userAnswers\": [\n                    \"a) beginner plant\",\n                    \"b) advanved plant\"\n                ],\n                \"TakenAt\": \"2023-01-04T15:10:32.350Z\",\n                \"status\": true,\n                \"_id\": \"63b596e8865fadd6d257d0d9\"\n            },\n            {\n                \"quiz\": \"63b56c688dede7da6c5c6d1c\",\n                \"userAnswers\": [\n                    \"a) beginner plant\",\n                    \"b) advanved plant\"\n                ],\n                \"TakenAt\": \"2023-01-04T15:11:51.167Z\",\n                \"status\": false,\n                \"_id\": \"63b5973778edd1ccbdbfe9c0\"\n            }\n        ],\n        \"level\": \"beginner\",\n        \"bookMarks\": [\n            {\n                \"bookMarkType\": \"plant\",\n                \"plant\": \"63b5be1385477b55dba99071\",\n                \"_id\": \"63b63bc49642c783a90221fb\"\n            },\n            {\n                \"bookMarkType\": \"shop\",\n                \"shop\": \"63b5bcf3a3cb363fa3656b9e\",\n                \"_id\": \"63b63c271dbab36286009adc\"\n            },\n            {\n                \"bookMarkType\": \"plant\",\n                \"plant\": \"63b5be3585477b55dba9907d\",\n                \"_id\": \"63b63e6c8dd0c5e5b173b292\"\n            }\n        ],\n        \"image\": \"uploads/1672920825246testApp.jpg\"\n    },\n    \"message\": \"updated\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Manage users",
+					"item": [
+						{
+							"name": "all users",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2E4MzYyZGJlYTdiM2FlMjM4MzFhZWQiLCJpYXQiOjE2NzE5NzEyMDF9.GPcIZuZe1swTucAnXn2OpXV2zT0EUDVyPswVfK1wVdQ",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseurl}}user/",
+									"host": [
+										"{{baseurl}}user"
+									],
+									"path": [
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "add user",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"fName\": \"salsapeel\",\r\n    \"lName\": \"ezeldin\",\r\n    \"email\": \"salsapeelezz@yhoo.com\",\r\n    \"password\": \"1234567\",\r\n    \"gender\": \"female\",\r\n    \"roleName\": \"user\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseurl}}user/adduser",
+									"host": [
+										"{{baseurl}}user"
+									],
+									"path": [
+										"adduser"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "edit user",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2E4MzYyZGJlYTdiM2FlMjM4MzFhZWQiLCJpYXQiOjE2NzI0OTY4MzV9.rn1ZZ9JO-yoszikJ9OF4_JdvrNcQvj6Qx4G8rgkaq2E",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"fName\": \"edittedd\",\r\n    \"age\": 30,\r\n    \"gender\": \"male\",\r\n    \"roleName\":\"user\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseurl}}user/edituser/:id",
+									"host": [
+										"{{baseurl}}user"
+									],
+									"path": [
+										"edituser",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "63a831607ecc634e9b8208c5"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete user",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2E1ZWEzYzYwZjY1N2JmNDQyNzMyYzAiLCJpYXQiOjE2NzE4MTc5MDB9.ZvaBezMukwcicvguJu_g8VDnGCJM_oxjn0lOndEu9io",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseurl}}user/deleteUser/:id",
+									"host": [
+										"{{baseurl}}user"
+									],
+									"path": [
+										"deleteUser",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "63a5ebc960f657bf44273304"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "single user",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2E4MzYyZGJlYTdiM2FlMjM4MzFhZWQiLCJpYXQiOjE2NzE5NzEyMDF9.GPcIZuZe1swTucAnXn2OpXV2zT0EUDVyPswVfK1wVdQ",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseurl}}user/single/:id",
+									"host": [
+										"{{baseurl}}user"
+									],
+									"path": [
+										"single",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "63a831607ecc634e9b8208c5"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "Products Reviews",
+					"item": [
+						{
+							"name": "product reviews",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2I0YzhlZjFmY2I4NmI5NjRjYTFjMTkiLCJpYXQiOjE2NzI4NjczNzV9.mrYyLHFlsDxcHMRXlQokthCi1rsWozvPMdemghBJ3oI",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseurl}}product/review/63b5be2485477b55dba99075",
+									"host": [
+										"{{baseurl}}product"
+									],
+									"path": [
+										"review",
+										"63b5be2485477b55dba99075"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "add review",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2I0YzhlZjFmY2I4NmI5NjRjYTFjMTkiLCJpYXQiOjE2NzI4NjczNzV9.mrYyLHFlsDxcHMRXlQokthCi1rsWozvPMdemghBJ3oI",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"rating\":5,\r\n    \"review\":\"good product\"\r\n    \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseurl}}product/review/addReview/63b5be2485477b55dba99075",
+									"host": [
+										"{{baseurl}}product"
+									],
+									"path": [
+										"review",
+										"addReview",
+										"63b5be2485477b55dba99075"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "single review",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2I0YzhlZjFmY2I4NmI5NjRjYTFjMTkiLCJpYXQiOjE2NzI4NjczNzV9.mrYyLHFlsDxcHMRXlQokthCi1rsWozvPMdemghBJ3oI",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"rating\":5,\r\n    \"review\":\"good product\"\r\n    \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseurl}}product/review/singleReview/63b5be2485477b55dba99075/63b5f7b66d4016611f9f4e1c",
+									"host": [
+										"{{baseurl}}product"
+									],
+									"path": [
+										"review",
+										"singleReview",
+										"63b5be2485477b55dba99075",
+										"63b5f7b66d4016611f9f4e1c"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "all products",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2IzMWJlZWVkZmM5M2IyMTE2NTljOTYiLCJpYXQiOjE2NzI2ODI1NTR9.5IXPCj5xvgJ6-nocUZdTKlFw9vr6nwQG2AitjgVcMIg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}product/",
+							"host": [
+								"{{baseurl}}product"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "single product",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}product/singleProduct/63b2f92ad7c10237c34d2c38",
+							"host": [
+								"{{baseurl}}product"
+							],
+							"path": [
+								"singleProduct",
+								"63b2f92ad7c10237c34d2c38"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "my products",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2I1YmNmM2EzY2IzNjNmYTM2NTZiOWUiLCJpYXQiOjE2NzI4NTQ5NzF9.4cwURwkDV1dRmAYxV9IzumTZdNODqsAYHNd_nyxQIjI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}product/myProducts",
+							"host": [
+								"{{baseurl}}product"
+							],
+							"path": [
+								"myProducts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add product",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{usertoken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "seed1",
+									"type": "text"
+								},
+								{
+									"key": "level",
+									"value": "advanced",
+									"type": "text"
+								},
+								{
+									"key": "category",
+									"value": "seed",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "description",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "200",
+									"type": "text"
+								},
+								{
+									"key": "countInStock",
+									"value": "12",
+									"type": "text"
+								},
+								{
+									"key": "img",
+									"type": "file",
+									"src": "/G:/Pics/Best Quotes & Status/14770.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseurl}}product/addProduct",
+							"host": [
+								"{{baseurl}}product"
+							],
+							"path": [
+								"addProduct"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "add product",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{usertoken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "plan10",
+											"type": "text"
+										},
+										{
+											"key": "level",
+											"value": "professional",
+											"type": "text"
+										},
+										{
+											"key": "category",
+											"value": "plant",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "description",
+											"type": "text"
+										},
+										{
+											"key": "price",
+											"value": "950",
+											"type": "text"
+										},
+										{
+											"key": "countInStock",
+											"value": "12",
+											"type": "text"
+										},
+										{
+											"key": "img",
+											"type": "file",
+											"src": "/G:/Pics/Best Quotes & Status/1378.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseurl}}product/addProduct",
+									"host": [
+										"{{baseurl}}product"
+									],
+									"path": [
+										"addProduct"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "426"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1aa-wDlZ1eHkx7OXslRG9Rokpfsr6sg\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 05 Jan 2023 12:27:42 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"apiStatus\": true,\n    \"data\": {\n        \"user\": \"63b4c8ef1fcb86b964ca1c19\",\n        \"name\": \"plan10\",\n        \"image\": \"uploads/products/1672921662242testApp.jpg\",\n        \"level\": \"professional\",\n        \"category\": \"plant\",\n        \"description\": \"description\",\n        \"price\": 950,\n        \"rating\": 0,\n        \"numReviews\": 0,\n        \"countInStock\": 12,\n        \"_id\": \"63b6c23e21dcf6387fc57e34\",\n        \"reviews\": [],\n        \"createdAt\": \"2023-01-05T12:27:42.256Z\",\n        \"updatedAt\": \"2023-01-05T12:27:42.256Z\",\n        \"__v\": 0\n    },\n    \"message\": \"product added successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "edit product",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{usertoken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"plant22\",\r\n    \"description\":\"description2222\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}product/editProduct/:id",
+							"host": [
+								"{{baseurl}}product"
+							],
+							"path": [
+								"editProduct",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "63b2ea3d5590ebc0a89293b2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete product",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{usertoken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}product/deleteProduct/63b2f3432e02a4af6b49a208",
+							"host": [
+								"{{baseurl}}product"
+							],
+							"path": [
+								"deleteProduct",
+								"63b2f3432e02a4af6b49a208"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Blogs",
+			"item": [
+				{
+					"name": "Blogs Reviews",
+					"item": [
+						{
+							"name": "blog reviews",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{usertoken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseurl}}blog/review/63b64c0b71089cba3fdf3b07",
+									"host": [
+										"{{baseurl}}blog"
+									],
+									"path": [
+										"review",
+										"63b64c0b71089cba3fdf3b07"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "blog reviews",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "{{usertoken}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseurl}}blog/review/63b64c0b71089cba3fdf3b07",
+											"host": [
+												"{{baseurl}}blog"
+											],
+											"path": [
+												"review",
+												"63b64c0b71089cba3fdf3b07"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "262"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"106-dzcJVT/jze3vM5feqJQZyHmFlkM\""
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 05 Jan 2023 04:21:15 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"apiStatus\": true,\n    \"data\": [\n        {\n            \"user\": \"63b4c8ef1fcb86b964ca1c19\",\n            \"rating\": 4,\n            \"review\": \"good blog\",\n            \"reviewDate\": \"1672892422158\",\n            \"_id\": \"63b65006cfde0ae2f13f8ad0\",\n            \"createdAt\": \"2023-01-05T04:20:22.213Z\",\n            \"updatedAt\": \"2023-01-05T04:20:22.213Z\"\n        }\n    ],\n    \"message\": \"Review fetched\"\n}"
+								}
+							]
+						},
+						{
+							"name": "add review",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{usertoken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"rating\":4,\r\n    \"review\":\"good blog\"\r\n    \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseurl}}blog/review/addReview/63b64c0b71089cba3fdf3b07",
+									"host": [
+										"{{baseurl}}blog"
+									],
+									"path": [
+										"review",
+										"addReview",
+										"63b64c0b71089cba3fdf3b07"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "add review",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "{{usertoken}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"rating\":4,\r\n    \"review\":\"good blog\"\r\n    \r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseurl}}blog/review/addReview/63b64c0b71089cba3fdf3b07",
+											"host": [
+												"{{baseurl}}blog"
+											],
+											"path": [
+												"review",
+												"addReview",
+												"63b64c0b71089cba3fdf3b07"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "269"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"10d-tCS06872zZb6hBYsrz/+nzGHinw\""
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 05 Jan 2023 04:20:22 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"apiStatus\": true,\n    \"data\": [\n        {\n            \"user\": \"63b4c8ef1fcb86b964ca1c19\",\n            \"rating\": 4,\n            \"review\": \"good blog\",\n            \"reviewDate\": \"1672892422158\",\n            \"_id\": \"63b65006cfde0ae2f13f8ad0\",\n            \"createdAt\": \"2023-01-05T04:20:22.213Z\",\n            \"updatedAt\": \"2023-01-05T04:20:22.213Z\"\n        }\n    ],\n    \"message\": \"Review has been added\"\n}"
+								},
+								{
+									"name": "add review again",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "{{usertoken}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"rating\":4,\r\n    \"review\":\"good blog\"\r\n    \r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseurl}}blog/review/addReview/63b64c0b71089cba3fdf3b07",
+											"host": [
+												"{{baseurl}}blog"
+											],
+											"path": [
+												"review",
+												"addReview",
+												"63b64c0b71089cba3fdf3b07"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "72"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"48-1oSMM2rVswAiz1mkLEatxzxUoCE\""
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 05 Jan 2023 04:20:43 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"apiStatus\": false,\n    \"data\": {},\n    \"message\": \"you already reviewed this blog\"\n}"
+								}
+							]
+						},
+						{
+							"name": "single review",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{usertoken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"rating\":5,\r\n    \"review\":\"good product\"\r\n    \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseurl}}blog/review/singleReview/63b64c0b71089cba3fdf3b07/63b65006cfde0ae2f13f8ad0",
+									"host": [
+										"{{baseurl}}blog"
+									],
+									"path": [
+										"review",
+										"singleReview",
+										"63b64c0b71089cba3fdf3b07",
+										"63b65006cfde0ae2f13f8ad0"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "single review",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "{{usertoken}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"rating\":5,\r\n    \"review\":\"good product\"\r\n    \r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseurl}}blog/review/singleReview/63b64c0b71089cba3fdf3b07/63b65006cfde0ae2f13f8ad0",
+											"host": [
+												"{{baseurl}}blog"
+											],
+											"path": [
+												"review",
+												"singleReview",
+												"63b64c0b71089cba3fdf3b07",
+												"63b65006cfde0ae2f13f8ad0"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "260"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"104-/93emkfCwOVV/zmFZmDr+yUM+iM\""
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 05 Jan 2023 04:22:29 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"apiStatus\": true,\n    \"data\": {\n        \"user\": \"63b4c8ef1fcb86b964ca1c19\",\n        \"rating\": 4,\n        \"review\": \"good blog\",\n        \"reviewDate\": \"1672892422158\",\n        \"_id\": \"63b65006cfde0ae2f13f8ad0\",\n        \"createdAt\": \"2023-01-05T04:20:22.213Z\",\n        \"updatedAt\": \"2023-01-05T04:20:22.213Z\"\n    },\n    \"message\": \"Review fetched\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "all blogs",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{usertoken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}blog/",
+							"host": [
+								"{{baseurl}}blog"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "all blogs",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{usertoken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseurl}}blog/",
+									"host": [
+										"{{baseurl}}blog"
+									],
+									"path": [
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "571"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"23b-eAWBsz4nKhGJSRlPxfM7wSSi2Rk\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 05 Jan 2023 04:04:02 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"apiStatus\": true,\n    \"data\": [\n        {\n            \"_id\": \"63b64c0b71089cba3fdf3b07\",\n            \"user\": \"63b4c8ef1fcb86b964ca1c19\",\n            \"blogType\": \"txt\",\n            \"content\": \"plants\",\n            \"level\": \"beginner\",\n            \"rating\": 0,\n            \"numReviews\": 0,\n            \"reviews\": [],\n            \"createdAt\": \"2023-01-05T04:03:23.111Z\",\n            \"updatedAt\": \"2023-01-05T04:03:23.111Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"63b64c1b71089cba3fdf3b19\",\n            \"user\": \"63b4c8ef1fcb86b964ca1c19\",\n            \"blogType\": \"txt\",\n            \"content\": \"i love plants\",\n            \"level\": \"beginner\",\n            \"rating\": 0,\n            \"numReviews\": 0,\n            \"reviews\": [],\n            \"createdAt\": \"2023-01-05T04:03:39.909Z\",\n            \"updatedAt\": \"2023-01-05T04:03:39.909Z\",\n            \"__v\": 0\n        }\n    ],\n    \"message\": \"blogs fetched successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "single blog",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{usertoken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}blog/singleBlog/63b64c1b71089cba3fdf3b19",
+							"host": [
+								"{{baseurl}}blog"
+							],
+							"path": [
+								"singleBlog",
+								"63b64c1b71089cba3fdf3b19"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "single blog",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{usertoken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseurl}}blog/singleBlog/63b64c1b71089cba3fdf3b19",
+									"host": [
+										"{{baseurl}}blog"
+									],
+									"path": [
+										"singleBlog",
+										"63b64c1b71089cba3fdf3b19"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "319"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"13f-joK75pgrVGvwLXQa2zorDDMwH+c\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 05 Jan 2023 04:04:34 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"apiStatus\": true,\n    \"data\": {\n        \"_id\": \"63b64c1b71089cba3fdf3b19\",\n        \"user\": \"63b4c8ef1fcb86b964ca1c19\",\n        \"blogType\": \"txt\",\n        \"content\": \"i love plants\",\n        \"level\": \"beginner\",\n        \"rating\": 0,\n        \"numReviews\": 0,\n        \"reviews\": [],\n        \"createdAt\": \"2023-01-05T04:03:39.909Z\",\n        \"updatedAt\": \"2023-01-05T04:03:39.909Z\",\n        \"__v\": 0\n    },\n    \"message\": \"blog fetched successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "my blogs",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{usertoken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}blog/myBlogs",
+							"host": [
+								"{{baseurl}}blog"
+							],
+							"path": [
+								"myBlogs"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "my blogs",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{usertoken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseurl}}blog/myBlogs",
+									"host": [
+										"{{baseurl}}blog"
+									],
+									"path": [
+										"myBlogs"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "571"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"23b-eAWBsz4nKhGJSRlPxfM7wSSi2Rk\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 05 Jan 2023 04:05:01 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"apiStatus\": true,\n    \"data\": [\n        {\n            \"_id\": \"63b64c0b71089cba3fdf3b07\",\n            \"user\": \"63b4c8ef1fcb86b964ca1c19\",\n            \"blogType\": \"txt\",\n            \"content\": \"plants\",\n            \"level\": \"beginner\",\n            \"rating\": 0,\n            \"numReviews\": 0,\n            \"reviews\": [],\n            \"createdAt\": \"2023-01-05T04:03:23.111Z\",\n            \"updatedAt\": \"2023-01-05T04:03:23.111Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"63b64c1b71089cba3fdf3b19\",\n            \"user\": \"63b4c8ef1fcb86b964ca1c19\",\n            \"blogType\": \"txt\",\n            \"content\": \"i love plants\",\n            \"level\": \"beginner\",\n            \"rating\": 0,\n            \"numReviews\": 0,\n            \"reviews\": [],\n            \"createdAt\": \"2023-01-05T04:03:39.909Z\",\n            \"updatedAt\": \"2023-01-05T04:03:39.909Z\",\n            \"__v\": 0\n        }\n    ],\n    \"message\": \"blogs fetched successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "add blog",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{usertoken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "blogType",
+									"value": "file",
+									"type": "text"
+								},
+								{
+									"key": "level",
+									"value": "beginner",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "i love plants and seeds",
+									"type": "text"
+								},
+								{
+									"key": "img",
+									"type": "file",
+									"src": "/G:/Pics/Best Quotes & Status/14228.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseurl}}blog/addBlog",
+							"host": [
+								"{{baseurl}}blog"
+							],
+							"path": [
+								"addBlog"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "add blog text only",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{usertoken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"blogType\":\"txt\",\r\n    \"level\":\"beginner\",\r\n    \"content\":\"plants\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseurl}}blog/addBlog",
+									"host": [
+										"{{baseurl}}blog"
+									],
+									"path": [
+										"addBlog"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "310"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"136-H4wvKmjoP4cCN6eCc7ytB1PxcBQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 05 Jan 2023 04:00:11 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"apiStatus\": true,\n    \"data\": {\n        \"user\": \"63b4c8ef1fcb86b964ca1c19\",\n        \"blogType\": \"txt\",\n        \"content\": \"plants\",\n        \"level\": \"beginner\",\n        \"rating\": 0,\n        \"numReviews\": 0,\n        \"_id\": \"63b64b4b71089cba3fdf3ac2\",\n        \"reviews\": [],\n        \"createdAt\": \"2023-01-05T04:00:11.218Z\",\n        \"updatedAt\": \"2023-01-05T04:00:11.218Z\",\n        \"__v\": 0\n    },\n    \"message\": \"blog added successfully\"\n}"
+						},
+						{
+							"name": "add blog text and image",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{usertoken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "blogType",
+											"value": "file",
+											"type": "text"
+										},
+										{
+											"key": "level",
+											"value": "beginner",
+											"type": "text"
+										},
+										{
+											"key": "content",
+											"value": "i love plants and seeds",
+											"type": "text"
+										},
+										{
+											"key": "img",
+											"type": "file",
+											"src": "/G:/Pics/Best Quotes & Status/14228.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseurl}}blog/addBlog",
+									"host": [
+										"{{baseurl}}blog"
+									],
+									"path": [
+										"addBlog"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "375"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"177-7Fvdy4zWXztE8+Qhybam+R3FgLQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 05 Jan 2023 12:47:22 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"apiStatus\": true,\n    \"data\": {\n        \"user\": \"63b4c8ef1fcb86b964ca1c19\",\n        \"blogType\": \"file\",\n        \"content\": \"i love plants and seeds\",\n        \"level\": \"beginner\",\n        \"rating\": 0,\n        \"numReviews\": 0,\n        \"_id\": \"63b6c6da9b399dfd4adbd1f2\",\n        \"reviews\": [],\n        \"image\": \"uploads/blogs/1672922842086laVie.jpg\",\n        \"createdAt\": \"2023-01-05T12:47:22.091Z\",\n        \"updatedAt\": \"2023-01-05T12:47:22.091Z\",\n        \"__v\": 0\n    },\n    \"message\": \"blog added successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "edit blog",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{usertoken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"blogType\":\"txt\",\r\n    \"level\":\"beginner\",\r\n    \"content\":\"i love plants\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}blog/editBlog/63b64b4b71089cba3fdf3ac2",
+							"host": [
+								"{{baseurl}}blog"
+							],
+							"path": [
+								"editBlog",
+								"63b64b4b71089cba3fdf3ac2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "edit blog",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{usertoken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"blogType\":\"txt\",\r\n    \"level\":\"beginner\",\r\n    \"content\":\"i love plants\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseurl}}blog/editBlog/63b64b4b71089cba3fdf3ac2",
+									"host": [
+										"{{baseurl}}blog"
+									],
+									"path": [
+										"editBlog",
+										"63b64b4b71089cba3fdf3ac2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "306"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"132-4hQo3tiJ+BUfBLh1PBcQi4/+2G0\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 05 Jan 2023 04:01:57 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"apiStatus\": true,\n    \"data\": {\n        \"_id\": \"63b64b4b71089cba3fdf3ac2\",\n        \"user\": \"63b4c8ef1fcb86b964ca1c19\",\n        \"blogType\": \"txt\",\n        \"content\": \"i love plants\",\n        \"level\": \"beginner\",\n        \"rating\": 0,\n        \"numReviews\": 0,\n        \"reviews\": [],\n        \"createdAt\": \"2023-01-05T04:00:11.218Z\",\n        \"updatedAt\": \"2023-01-05T04:01:57.896Z\",\n        \"__v\": 0\n    },\n    \"message\": \"blog updated\"\n}"
+						}
+					]
+				},
+				{
+					"name": "delete blog",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{usertoken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}blog/deleteBlog/63b64b4b71089cba3fdf3ac2",
+							"host": [
+								"{{baseurl}}blog"
+							],
+							"path": [
+								"deleteBlog",
+								"63b64b4b71089cba3fdf3ac2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "delete blog",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{usertoken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseurl}}blog/deleteBlog/63b64b4b71089cba3fdf3ac2",
+									"host": [
+										"{{baseurl}}blog"
+									],
+									"path": [
+										"deleteBlog",
+										"63b64b4b71089cba3fdf3ac2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "55"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"37-iUsA+ntYyycYLKNMBc4smBUf78Q\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 05 Jan 2023 04:02:30 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"apiStatus\": true,\n    \"data\": null,\n    \"message\": \"blog deleted\"\n}"
+						},
+						{
+							"name": "blog not found",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{usertoken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseurl}}blog/deleteBlog/63b64b4b71089cba3fdf3ac2",
+									"host": [
+										"{{baseurl}}blog"
+									],
+									"path": [
+										"deleteBlog",
+										"63b64b4b71089cba3fdf3ac2"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "56"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"38-aApU7yhyNkaybTPCRLsXJmbaZLI\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 05 Jan 2023 04:02:43 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"apiStatus\": false,\n    \"data\": {},\n    \"message\": \"blog not found\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Book  Marks",
+			"item": [
+				{
+					"name": "add bookmark",
+					"item": [
+						{
+							"name": "add shop bookmark",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{usertoken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseurl}}user/bookMark/add/shop/63b5bcf3a3cb363fa3656b9e",
+									"host": [
+										"{{baseurl}}user"
+									],
+									"path": [
+										"bookMark",
+										"add",
+										"shop",
+										"63b5bcf3a3cb363fa3656b9e"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "add plant bookmark",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{usertoken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseurl}}user/bookMark/add/plant/63b5be3585477b55dba9907d",
+									"host": [
+										"{{baseurl}}user"
+									],
+									"path": [
+										"bookMark",
+										"add",
+										"plant",
+										"63b5be3585477b55dba9907d"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "add seed bookmark",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{usertoken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseurl}}user/bookMark/add/seed/63b5be2485477b55dba99075",
+									"host": [
+										"{{baseurl}}user"
+									],
+									"path": [
+										"bookMark",
+										"add",
+										"seed",
+										"63b5be2485477b55dba99075"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "add blog bookmark",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{usertoken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseurl}}user/bookMark/add/blog/63b5bcf3a3cb363fa3656b9e",
+									"host": [
+										"{{baseurl}}user"
+									],
+									"path": [
+										"bookMark",
+										"add",
+										"blog",
+										"63b5bcf3a3cb363fa3656b9e"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "my bookmarks",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{usertoken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}user/bookMark",
+							"host": [
+								"{{baseurl}}user"
+							],
+							"path": [
+								"bookMark"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "single bookmark",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{usertoken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}user/bookMark/63b63bc49642c783a90221fb",
+							"host": [
+								"{{baseurl}}user"
+							],
+							"path": [
+								"bookMark",
+								"63b63bc49642c783a90221fb"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete item",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{usertoken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}user/bookMark/63b63db21dbab36286009b39",
+							"host": [
+								"{{baseurl}}user"
+							],
+							"path": [
+								"bookMark",
+								"63b63db21dbab36286009b39"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Shopping Cart",
+			"item": [
+				{
+					"name": "get shopping cart",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2IzMWJlZWVkZmM5M2IyMTE2NTljOTYiLCJpYXQiOjE2NzI2ODI1NTR9.5IXPCj5xvgJ6-nocUZdTKlFw9vr6nwQG2AitjgVcMIg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}user/cart/",
+							"host": [
+								"{{baseurl}}user"
+							],
+							"path": [
+								"cart",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add item",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{usertoken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}user/cart/addItem/63b5be2485477b55dba99075",
+							"host": [
+								"{{baseurl}}user"
+							],
+							"path": [
+								"cart",
+								"addItem",
+								"63b5be2485477b55dba99075"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete item",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2IzMWJlZWVkZmM5M2IyMTE2NTljOTYiLCJpYXQiOjE2NzI2ODI1NTR9.5IXPCj5xvgJ6-nocUZdTKlFw9vr6nwQG2AitjgVcMIg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}user/cart/deleteItem/63b2f92ad7c10237c34d2c38",
+							"host": [
+								"{{baseurl}}user"
+							],
+							"path": [
+								"cart",
+								"deleteItem",
+								"63b2f92ad7c10237c34d2c38"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "decrease item",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{usertoken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}user/cart/decreaseItem/63b5be1385477b55dba99071",
+							"host": [
+								"{{baseurl}}user"
+							],
+							"path": [
+								"cart",
+								"decreaseItem",
+								"63b5be1385477b55dba99071"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Orders",
+			"item": [
+				{
+					"name": "get all orders",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2IzMWJlZWVkZmM5M2IyMTE2NTljOTYiLCJpYXQiOjE2NzI2ODI1NTR9.5IXPCj5xvgJ6-nocUZdTKlFw9vr6nwQG2AitjgVcMIg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}order/",
+							"host": [
+								"{{baseurl}}order"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get previous orders",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2IzMWJlZWVkZmM5M2IyMTE2NTljOTYiLCJpYXQiOjE2NzI2ODI1NTR9.5IXPCj5xvgJ6-nocUZdTKlFw9vr6nwQG2AitjgVcMIg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}order/myOrders",
+							"host": [
+								"{{baseurl}}order"
+							],
+							"path": [
+								"myOrders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "single Order",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2IzMWJlZWVkZmM5M2IyMTE2NTljOTYiLCJpYXQiOjE2NzI2ODI1NTR9.5IXPCj5xvgJ6-nocUZdTKlFw9vr6nwQG2AitjgVcMIg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}order/singleOrder/63b46b6bd55c77364945ea8e",
+							"host": [
+								"{{baseurl}}order"
+							],
+							"path": [
+								"singleOrder",
+								"63b46b6bd55c77364945ea8e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add order",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2I0YzhlZjFmY2I4NmI5NjRjYTFjMTkiLCJpYXQiOjE2NzI4NTU0MTJ9.aAhfvoKe-Fu8QPLp1a_fdM2Q1iGgcsQutGHv1ZGPTj0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"fullName\":\"salsapeel ezzeldin\",\r\n    \"email\":\"salsapeel.ezzeldin@gmail.com\",\r\n    \"phoneNumbers\":[\r\n        {\r\n            \"numberType\":\"home\",\r\n            \"phoneNumber\":\"01234567784\"\r\n        },\r\n        {\r\n            \"numberType\":\"personal\",\r\n            \"phoneNumber\":\"01112765543\"\r\n        }\r\n    ],\r\n    \"shippingAddress\": {\r\n        \"country\": \"Egy\",\r\n        \"city\": \"cairo\",\r\n        \"address\": \"street2\",\r\n        \"postalCode\": \"332\"\r\n    },\r\n    \"paymentMethod\": \"cash\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}order/addOrder",
+							"host": [
+								"{{baseurl}}order"
+							],
+							"path": [
+								"addOrder"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "varify order",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{usertoken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"varifyCode\":\"LRMBf\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}order/varifyOrder/63b5cb039bb787ac3bb6644b",
+							"host": [
+								"{{baseurl}}order"
+							],
+							"path": [
+								"varifyOrder",
+								"63b5cb039bb787ac3bb6644b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete order",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2IzMWJlZWVkZmM5M2IyMTE2NTljOTYiLCJpYXQiOjE2NzI2ODI1NTR9.5IXPCj5xvgJ6-nocUZdTKlFw9vr6nwQG2AitjgVcMIg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}order/deleteOrder/63b46b6bd55c77364945ea8e",
+							"host": [
+								"{{baseurl}}order"
+							],
+							"path": [
+								"deleteOrder",
+								"63b46b6bd55c77364945ea8e"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Quizes",
+			"item": [
+				{
+					"name": "user Quizes",
+					"item": [
+						{
+							"name": "all taken quizes",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{usertoken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseurl}}user/quiz/",
+									"host": [
+										"{{baseurl}}user"
+									],
+									"path": [
+										"quiz",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "take quiz",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{usertoken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userAnswers\":[\r\n            \"a) beginner plant\",\r\n            \"b) advanved plant\"\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseurl}}user/quiz/takeQuiz/63b56c688dede7da6c5c6d1c",
+									"host": [
+										"{{baseurl}}user"
+									],
+									"path": [
+										"quiz",
+										"takeQuiz",
+										"63b56c688dede7da6c5c6d1c"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "all quizes",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{usertoken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}quiz/",
+							"host": [
+								"{{baseurl}}quiz"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "my quizes",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{usertoken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}quiz/myQuizes",
+							"host": [
+								"{{baseurl}}quiz"
+							],
+							"path": [
+								"myQuizes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add quiz",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{usertoken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"level\":\"advanced\",\r\n    \"title\":\"quiz1\",\r\n    \"numQuestions\": 2,\r\n    \"questions\":[\r\n        {\r\n            \"question\":\"what do you know about plant c?\",\r\n            \"choises\":[\r\n                {\"choise\":\"a) beginner plant\"},\r\n                {\"choise\":\"b) advanved plant\"},\r\n                {\"choise\":\"c) profitional plant\"},\r\n                {\"choise\":\"d) newbie plant\"}\r\n                ],\r\n            \"answer\":\"a) beginner plant\"\r\n        },\r\n        {\r\n            \"question\":\"what do you know about plant e?\",\r\n            \"choises\":[\r\n                {\"choise\":\"a) beginner plant\"},\r\n                {\"choise\":\"b) advanved plant\"},\r\n                {\"choise\":\"c) profitional plant\"},\r\n                {\"choise\":\"d) newbie plant\"}\r\n                ],\r\n            \"answer\":\"b) advanved plant\"\r\n        }\r\n    ],\r\n    \"points\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}quiz/addQuiz",
+							"host": [
+								"{{baseurl}}quiz"
+							],
+							"path": [
+								"addQuiz"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "single quiz",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{usertoken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}quiz/singleQuiz/63b56bda8dede7da6c5c6cec",
+							"host": [
+								"{{baseurl}}quiz"
+							],
+							"path": [
+								"singleQuiz",
+								"63b56bda8dede7da6c5c6cec"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit quiz",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{usertoken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"level\":\"beginner\",\r\n    \"title\":\"quiz1\",\r\n    \"numQuestions\": 3,\r\n    \"questions\":[\r\n        {\r\n            \"question\":\"what do you know about plant 2?\",\r\n            \"choises\":[\r\n                {\"choise\":\"a) beginner plant\"},\r\n                {\"choise\":\"b) advanved plant\"},\r\n                {\"choise\":\"c) profitional plant\"},\r\n                {\"choise\":\"d) newbie plant\"}\r\n                ],\r\n            \"answer\":\"a) beginner plant\"\r\n        },\r\n        {\r\n            \"question\":\"what do you know about plant 3?\",\r\n            \"choises\":[\r\n                {\"choise\":\"a) beginner plant\"},\r\n                {\"choise\":\"b) advanved plant\"},\r\n                {\"choise\":\"c) profitional plant\"},\r\n                {\"choise\":\"d) newbie plant\"}\r\n                ],\r\n            \"answer\":\"c) profitional plant\"\r\n        },\r\n        {\r\n            \"question\":\"what do you know about plant 4?\",\r\n            \"choises\":[\r\n                {\"choise\":\"a) beginner plant\"},\r\n                {\"choise\":\"b) advanved plant\"},\r\n                {\"choise\":\"c) profitional plant\"},\r\n                {\"choise\":\"d) newbie plant\"}\r\n                ],\r\n            \"answer\":\"b) advanved plant\"\r\n        }\r\n    ],\r\n    \"points\": 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}quiz/editQuiz/63b56a1b765bc4c8f0b97fc9",
+							"host": [
+								"{{baseurl}}quiz"
+							],
+							"path": [
+								"editQuiz",
+								"63b56a1b765bc4c8f0b97fc9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete role",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{usertoken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"url\":\"/addUrlLL\", \r\n    \"method\":\"POST\",\r\n    \"roles\": [{\r\n        \"roleName\":\"admin\"\r\n    }]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}quiz/deleteQuiz/63b56a1b765bc4c8f0b97fc9",
+							"host": [
+								"{{baseurl}}quiz"
+							],
+							"path": [
+								"deleteQuiz",
+								"63b56a1b765bc4c8f0b97fc9"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Rewards",
+			"item": [
+				{
+					"name": "my Rewards",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{usertoken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}user/reward/myRewards",
+							"host": [
+								"{{baseurl}}user"
+							],
+							"path": [
+								"reward",
+								"myRewards"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user Rewards",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{usertoken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}user/rewards/63b4c8ef1fcb86b964ca1c19",
+							"host": [
+								"{{baseurl}}user"
+							],
+							"path": [
+								"rewards",
+								"63b4c8ef1fcb86b964ca1c19"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Communities",
+			"item": [
+				{
+					"name": "Community Users",
+					"item": [
+						{
+							"name": "community users",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{usertoken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseurl}}community/users/63b6e52ef072ec3250ea53b8",
+									"host": [
+										"{{baseurl}}community"
+									],
+									"path": [
+										"users",
+										"63b6e52ef072ec3250ea53b8"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "community users",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "{{usertoken}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseurl}}community/users/63b6e52ef072ec3250ea53b8",
+											"host": [
+												"{{baseurl}}community"
+											],
+											"path": [
+												"users",
+												"63b6e52ef072ec3250ea53b8"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "170"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"aa-8Pcmx1oOfHOpi0yT3BSdlfgxjS0\""
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 05 Jan 2023 14:59:22 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"apiStatus\": true,\n    \"data\": [\n        {\n            \"user\": \"63b4c8ef1fcb86b964ca1c19\",\n            \"joinDate\": \"2023-01-05T14:57:09.916Z\",\n            \"_id\": \"63b6e545f072ec3250ea53cc\"\n        }\n    ],\n    \"message\": \"community users fetched\"\n}"
+								}
+							]
+						},
+						{
+							"name": "join community",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{usertoken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"rating\":4,\r\n    \"review\":\"good blog\"\r\n    \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseurl}}community/join/63b6e52ef072ec3250ea53b8",
+									"host": [
+										"{{baseurl}}community"
+									],
+									"path": [
+										"join",
+										"63b6e52ef072ec3250ea53b8"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "join community",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "{{usertoken}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"rating\":4,\r\n    \"review\":\"good blog\"\r\n    \r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseurl}}community/join/63b6e52ef072ec3250ea53b8",
+											"host": [
+												"{{baseurl}}community"
+											],
+											"path": [
+												"join",
+												"63b6e52ef072ec3250ea53b8"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "171"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"ab-BnsGb6wkKbg8vbBYL6IS8EF0VZ0\""
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 05 Jan 2023 14:57:10 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"apiStatus\": true,\n    \"data\": [\n        {\n            \"user\": \"63b4c8ef1fcb86b964ca1c19\",\n            \"joinDate\": \"2023-01-05T14:57:09.916Z\",\n            \"_id\": \"63b6e545f072ec3250ea53cc\"\n        }\n    ],\n    \"message\": \"user joined successfully\"\n}"
+								},
+								{
+									"name": "try to join community again",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "{{usertoken}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"rating\":4,\r\n    \"review\":\"good blog\"\r\n    \r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseurl}}community/join/63b6e52ef072ec3250ea53b8",
+											"host": [
+												"{{baseurl}}community"
+											],
+											"path": [
+												"join",
+												"63b6e52ef072ec3250ea53b8"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "75"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"4b-1mGN5tpkXwqYMcJ4vgD25nvs4mo\""
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 05 Jan 2023 14:57:34 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"apiStatus\": false,\n    \"data\": {},\n    \"message\": \"you already joined this community\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Community Posts",
+					"item": [
+						{
+							"name": "Community Posts Reviews",
+							"item": [
+								{
+									"name": "community post reviews",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "{{usertoken}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseurl}}community/post/reviews/:cID/:pID",
+											"host": [
+												"{{baseurl}}community"
+											],
+											"path": [
+												"post",
+												"reviews",
+												":cID",
+												":pID"
+											],
+											"variable": [
+												{
+													"key": "cID",
+													"value": "63b6e52ef072ec3250ea53b8",
+													"description": "community _id"
+												},
+												{
+													"key": "pID",
+													"value": "63b6eab11b59069861ea4aa8",
+													"description": "post _id"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "community posts",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Authorization",
+														"value": "{{usertoken}}",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseurl}}community/posts/63b6e52ef072ec3250ea53b8",
+													"host": [
+														"{{baseurl}}community"
+													],
+													"path": [
+														"posts",
+														"63b6e52ef072ec3250ea53b8"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Powered-By",
+													"value": "Express"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Content-Length",
+													"value": "2275"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"8e3-h4A+a07dNc/9RKfoHITIVvfGnhY\""
+												},
+												{
+													"key": "Date",
+													"value": "Thu, 05 Jan 2023 15:31:09 GMT"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "Keep-Alive",
+													"value": "timeout=5"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"apiStatus\": true,\n    \"data\": [\n        {\n            \"user\": \"63b4c8ef1fcb86b964ca1c19\",\n            \"postType\": \"txt\",\n            \"postDate\": \"2023-01-05T15:20:17.184Z\",\n            \"rating\": 0,\n            \"numReviews\": 0,\n            \"numComments\": 0,\n            \"_id\": \"63b6eab11b59069861ea4aa8\",\n            \"reviews\": [],\n            \"comments\": [],\n            \"createdAt\": \"2023-01-05T15:20:17.205Z\",\n            \"updatedAt\": \"2023-01-05T15:20:17.205Z\"\n        },\n        {\n            \"user\": \"63b4c8ef1fcb86b964ca1c19\",\n            \"postType\": \"txt\",\n            \"postDate\": \"2023-01-05T15:21:01.873Z\",\n            \"rating\": 0,\n            \"numReviews\": 0,\n            \"numComments\": 0,\n            \"_id\": \"63b6eadd8f01afb18ba569bb\",\n            \"reviews\": [],\n            \"comments\": [],\n            \"createdAt\": \"2023-01-05T15:21:01.892Z\",\n            \"updatedAt\": \"2023-01-05T15:21:01.892Z\"\n        },\n        {\n            \"user\": \"63b4c8ef1fcb86b964ca1c19\",\n            \"postType\": \"txt\",\n            \"postDate\": \"2023-01-05T15:21:45.015Z\",\n            \"rating\": 0,\n            \"numReviews\": 0,\n            \"numComments\": 0,\n            \"_id\": \"63b6eb096b89ecab068c3d0e\",\n            \"reviews\": [],\n            \"comments\": [],\n            \"createdAt\": \"2023-01-05T15:21:45.029Z\",\n            \"updatedAt\": \"2023-01-05T15:21:45.029Z\"\n        },\n        {\n            \"user\": \"63b4c8ef1fcb86b964ca1c19\",\n            \"postType\": \"txt\",\n            \"postDate\": \"2023-01-05T15:23:49.737Z\",\n            \"rating\": 0,\n            \"numReviews\": 0,\n            \"numComments\": 0,\n            \"_id\": \"63b6eb85d5bb8b47918c1876\",\n            \"reviews\": [],\n            \"comments\": [],\n            \"createdAt\": \"2023-01-05T15:23:49.760Z\",\n            \"updatedAt\": \"2023-01-05T15:23:49.760Z\"\n        },\n        {\n            \"user\": \"63b4c8ef1fcb86b964ca1c19\",\n            \"postType\": \"txt\",\n            \"postDate\": \"2023-01-05T15:24:34.022Z\",\n            \"rating\": 0,\n            \"numReviews\": 0,\n            \"numComments\": 0,\n            \"_id\": \"63b6ebb2d5bb8b47918c188f\",\n            \"reviews\": [],\n            \"comments\": [],\n            \"createdAt\": \"2023-01-05T15:24:34.029Z\",\n            \"updatedAt\": \"2023-01-05T15:24:34.029Z\"\n        },\n        {\n            \"user\": \"63b4c8ef1fcb86b964ca1c19\",\n            \"postType\": \"txt\",\n            \"postDate\": \"2023-01-05T15:25:13.756Z\",\n            \"rating\": 0,\n            \"numReviews\": 0,\n            \"numComments\": 0,\n            \"_id\": \"63b6ebd9d5bb8b47918c18a9\",\n            \"reviews\": [],\n            \"comments\": [],\n            \"createdAt\": \"2023-01-05T15:25:13.758Z\",\n            \"updatedAt\": \"2023-01-05T15:25:13.758Z\"\n        },\n        {\n            \"user\": \"63b4c8ef1fcb86b964ca1c19\",\n            \"postType\": \"txt\",\n            \"content\": \"contenttt\",\n            \"postDate\": \"2023-01-05T15:28:08.914Z\",\n            \"rating\": 0,\n            \"numReviews\": 0,\n            \"numComments\": 0,\n            \"_id\": \"63b6ec8864d7b24ca7f98340\",\n            \"reviews\": [],\n            \"comments\": [],\n            \"createdAt\": \"2023-01-05T15:28:08.920Z\",\n            \"updatedAt\": \"2023-01-05T15:28:08.920Z\"\n        },\n        {\n            \"user\": \"63b4c8ef1fcb86b964ca1c19\",\n            \"postType\": \"txt\",\n            \"content\": \"contenttt\",\n            \"postDate\": \"2023-01-05T15:28:22.588Z\",\n            \"rating\": 0,\n            \"numReviews\": 0,\n            \"numComments\": 0,\n            \"_id\": \"63b6ec9664d7b24ca7f9835c\",\n            \"reviews\": [],\n            \"comments\": [],\n            \"createdAt\": \"2023-01-05T15:28:22.593Z\",\n            \"updatedAt\": \"2023-01-05T15:28:22.593Z\"\n        }\n    ],\n    \"message\": \"community users fetched\"\n}"
+										}
+									]
+								},
+								{
+									"name": "single community post review",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "{{usertoken}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseurl}}community/post/singleReview/:cID/:pID/:rID",
+											"host": [
+												"{{baseurl}}community"
+											],
+											"path": [
+												"post",
+												"singleReview",
+												":cID",
+												":pID",
+												":rID"
+											],
+											"variable": [
+												{
+													"key": "cID",
+													"value": "63b6e52ef072ec3250ea53b8",
+													"description": "community _id"
+												},
+												{
+													"key": "pID",
+													"value": "63b6eab11b59069861ea4aa8",
+													"description": "post _id"
+												},
+												{
+													"key": "rID",
+													"value": "63b705d1877e5e0ae909ae05",
+													"description": "review _id"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "single community post",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Authorization",
+														"value": "{{usertoken}}",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseurl}}community/singlePost/:cID/:pID",
+													"host": [
+														"{{baseurl}}community"
+													],
+													"path": [
+														"singlePost",
+														":cID",
+														":pID"
+													],
+													"variable": [
+														{
+															"key": "cID",
+															"value": "63b6e52ef072ec3250ea53b8",
+															"description": "community _id"
+														},
+														{
+															"key": "pID",
+															"value": "63b6eab11b59069861ea4aa8",
+															"description": "post _id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Powered-By",
+													"value": "Express"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Content-Length",
+													"value": "321"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"141-0q27R6o+qA2av+qn2yALgmGfgk8\""
+												},
+												{
+													"key": "Date",
+													"value": "Thu, 05 Jan 2023 15:34:14 GMT"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "Keep-Alive",
+													"value": "timeout=5"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"apiStatus\": true,\n    \"data\": {\n        \"user\": \"63b4c8ef1fcb86b964ca1c19\",\n        \"postType\": \"txt\",\n        \"postDate\": \"2023-01-05T15:20:17.184Z\",\n        \"rating\": 0,\n        \"numReviews\": 0,\n        \"numComments\": 0,\n        \"_id\": \"63b6eab11b59069861ea4aa8\",\n        \"reviews\": [],\n        \"comments\": [],\n        \"createdAt\": \"2023-01-05T15:20:17.205Z\",\n        \"updatedAt\": \"2023-01-05T15:20:17.205Z\"\n    },\n    \"message\": \"post fetched\"\n}"
+										}
+									]
+								},
+								{
+									"name": "add community post review",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "{{usertoken}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"rating\":4,\r\n    \"review\":\"my review\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseurl}}community/post/addReview/:cID/:pID/",
+											"host": [
+												"{{baseurl}}community"
+											],
+											"path": [
+												"post",
+												"addReview",
+												":cID",
+												":pID",
+												""
+											],
+											"variable": [
+												{
+													"key": "cID",
+													"value": "63b6e52ef072ec3250ea53b8",
+													"description": "community _id"
+												},
+												{
+													"key": "pID",
+													"value": "63b6eab11b59069861ea4aa8",
+													"description": "post _id"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "add community post",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Authorization",
+														"value": "{{usertoken}}",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n    \"postType\":\"txt\",\r\n    \"content\":\"contenttt\"\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseurl}}community/addPost/63b6e52ef072ec3250ea53b8",
+													"host": [
+														"{{baseurl}}community"
+													],
+													"path": [
+														"addPost",
+														"63b6e52ef072ec3250ea53b8"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Powered-By",
+													"value": "Express"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Content-Length",
+													"value": "2275"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"8e3-lZcTYDzwuVJEaMyqzBfrHopo15E\""
+												},
+												{
+													"key": "Date",
+													"value": "Thu, 05 Jan 2023 15:28:22 GMT"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "Keep-Alive",
+													"value": "timeout=5"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"apiStatus\": true,\n    \"data\": [\n        {\n            \"user\": \"63b4c8ef1fcb86b964ca1c19\",\n            \"postType\": \"txt\",\n            \"postDate\": \"2023-01-05T15:20:17.184Z\",\n            \"rating\": 0,\n            \"numReviews\": 0,\n            \"numComments\": 0,\n            \"_id\": \"63b6eab11b59069861ea4aa8\",\n            \"reviews\": [],\n            \"comments\": [],\n            \"createdAt\": \"2023-01-05T15:20:17.205Z\",\n            \"updatedAt\": \"2023-01-05T15:20:17.205Z\"\n        },\n        {\n            \"user\": \"63b4c8ef1fcb86b964ca1c19\",\n            \"postType\": \"txt\",\n            \"postDate\": \"2023-01-05T15:21:01.873Z\",\n            \"rating\": 0,\n            \"numReviews\": 0,\n            \"numComments\": 0,\n            \"_id\": \"63b6eadd8f01afb18ba569bb\",\n            \"reviews\": [],\n            \"comments\": [],\n            \"createdAt\": \"2023-01-05T15:21:01.892Z\",\n            \"updatedAt\": \"2023-01-05T15:21:01.892Z\"\n        },\n        {\n            \"user\": \"63b4c8ef1fcb86b964ca1c19\",\n            \"postType\": \"txt\",\n            \"postDate\": \"2023-01-05T15:21:45.015Z\",\n            \"rating\": 0,\n            \"numReviews\": 0,\n            \"numComments\": 0,\n            \"_id\": \"63b6eb096b89ecab068c3d0e\",\n            \"reviews\": [],\n            \"comments\": [],\n            \"createdAt\": \"2023-01-05T15:21:45.029Z\",\n            \"updatedAt\": \"2023-01-05T15:21:45.029Z\"\n        },\n        {\n            \"user\": \"63b4c8ef1fcb86b964ca1c19\",\n            \"postType\": \"txt\",\n            \"postDate\": \"2023-01-05T15:23:49.737Z\",\n            \"rating\": 0,\n            \"numReviews\": 0,\n            \"numComments\": 0,\n            \"_id\": \"63b6eb85d5bb8b47918c1876\",\n            \"reviews\": [],\n            \"comments\": [],\n            \"createdAt\": \"2023-01-05T15:23:49.760Z\",\n            \"updatedAt\": \"2023-01-05T15:23:49.760Z\"\n        },\n        {\n            \"user\": \"63b4c8ef1fcb86b964ca1c19\",\n            \"postType\": \"txt\",\n            \"postDate\": \"2023-01-05T15:24:34.022Z\",\n            \"rating\": 0,\n            \"numReviews\": 0,\n            \"numComments\": 0,\n            \"_id\": \"63b6ebb2d5bb8b47918c188f\",\n            \"reviews\": [],\n            \"comments\": [],\n            \"createdAt\": \"2023-01-05T15:24:34.029Z\",\n            \"updatedAt\": \"2023-01-05T15:24:34.029Z\"\n        },\n        {\n            \"user\": \"63b4c8ef1fcb86b964ca1c19\",\n            \"postType\": \"txt\",\n            \"postDate\": \"2023-01-05T15:25:13.756Z\",\n            \"rating\": 0,\n            \"numReviews\": 0,\n            \"numComments\": 0,\n            \"_id\": \"63b6ebd9d5bb8b47918c18a9\",\n            \"reviews\": [],\n            \"comments\": [],\n            \"createdAt\": \"2023-01-05T15:25:13.758Z\",\n            \"updatedAt\": \"2023-01-05T15:25:13.758Z\"\n        },\n        {\n            \"user\": \"63b4c8ef1fcb86b964ca1c19\",\n            \"postType\": \"txt\",\n            \"content\": \"contenttt\",\n            \"postDate\": \"2023-01-05T15:28:08.914Z\",\n            \"rating\": 0,\n            \"numReviews\": 0,\n            \"numComments\": 0,\n            \"_id\": \"63b6ec8864d7b24ca7f98340\",\n            \"reviews\": [],\n            \"comments\": [],\n            \"createdAt\": \"2023-01-05T15:28:08.920Z\",\n            \"updatedAt\": \"2023-01-05T15:28:08.920Z\"\n        },\n        {\n            \"user\": \"63b4c8ef1fcb86b964ca1c19\",\n            \"postType\": \"txt\",\n            \"content\": \"contenttt\",\n            \"postDate\": \"2023-01-05T15:28:22.588Z\",\n            \"rating\": 0,\n            \"numReviews\": 0,\n            \"numComments\": 0,\n            \"_id\": \"63b6ec9664d7b24ca7f9835c\",\n            \"reviews\": [],\n            \"comments\": [],\n            \"createdAt\": \"2023-01-05T15:28:22.593Z\",\n            \"updatedAt\": \"2023-01-05T15:28:22.593Z\"\n        }\n    ],\n    \"message\": \"post added successfully\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "community posts",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{usertoken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseurl}}community/posts/63b6e52ef072ec3250ea53b8",
+									"host": [
+										"{{baseurl}}community"
+									],
+									"path": [
+										"posts",
+										"63b6e52ef072ec3250ea53b8"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "community posts",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "{{usertoken}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseurl}}community/posts/63b6e52ef072ec3250ea53b8",
+											"host": [
+												"{{baseurl}}community"
+											],
+											"path": [
+												"posts",
+												"63b6e52ef072ec3250ea53b8"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "2275"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"8e3-h4A+a07dNc/9RKfoHITIVvfGnhY\""
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 05 Jan 2023 15:31:09 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"apiStatus\": true,\n    \"data\": [\n        {\n            \"user\": \"63b4c8ef1fcb86b964ca1c19\",\n            \"postType\": \"txt\",\n            \"postDate\": \"2023-01-05T15:20:17.184Z\",\n            \"rating\": 0,\n            \"numReviews\": 0,\n            \"numComments\": 0,\n            \"_id\": \"63b6eab11b59069861ea4aa8\",\n            \"reviews\": [],\n            \"comments\": [],\n            \"createdAt\": \"2023-01-05T15:20:17.205Z\",\n            \"updatedAt\": \"2023-01-05T15:20:17.205Z\"\n        },\n        {\n            \"user\": \"63b4c8ef1fcb86b964ca1c19\",\n            \"postType\": \"txt\",\n            \"postDate\": \"2023-01-05T15:21:01.873Z\",\n            \"rating\": 0,\n            \"numReviews\": 0,\n            \"numComments\": 0,\n            \"_id\": \"63b6eadd8f01afb18ba569bb\",\n            \"reviews\": [],\n            \"comments\": [],\n            \"createdAt\": \"2023-01-05T15:21:01.892Z\",\n            \"updatedAt\": \"2023-01-05T15:21:01.892Z\"\n        },\n        {\n            \"user\": \"63b4c8ef1fcb86b964ca1c19\",\n            \"postType\": \"txt\",\n            \"postDate\": \"2023-01-05T15:21:45.015Z\",\n            \"rating\": 0,\n            \"numReviews\": 0,\n            \"numComments\": 0,\n            \"_id\": \"63b6eb096b89ecab068c3d0e\",\n            \"reviews\": [],\n            \"comments\": [],\n            \"createdAt\": \"2023-01-05T15:21:45.029Z\",\n            \"updatedAt\": \"2023-01-05T15:21:45.029Z\"\n        },\n        {\n            \"user\": \"63b4c8ef1fcb86b964ca1c19\",\n            \"postType\": \"txt\",\n            \"postDate\": \"2023-01-05T15:23:49.737Z\",\n            \"rating\": 0,\n            \"numReviews\": 0,\n            \"numComments\": 0,\n            \"_id\": \"63b6eb85d5bb8b47918c1876\",\n            \"reviews\": [],\n            \"comments\": [],\n            \"createdAt\": \"2023-01-05T15:23:49.760Z\",\n            \"updatedAt\": \"2023-01-05T15:23:49.760Z\"\n        },\n        {\n            \"user\": \"63b4c8ef1fcb86b964ca1c19\",\n            \"postType\": \"txt\",\n            \"postDate\": \"2023-01-05T15:24:34.022Z\",\n            \"rating\": 0,\n            \"numReviews\": 0,\n            \"numComments\": 0,\n            \"_id\": \"63b6ebb2d5bb8b47918c188f\",\n            \"reviews\": [],\n            \"comments\": [],\n            \"createdAt\": \"2023-01-05T15:24:34.029Z\",\n            \"updatedAt\": \"2023-01-05T15:24:34.029Z\"\n        },\n        {\n            \"user\": \"63b4c8ef1fcb86b964ca1c19\",\n            \"postType\": \"txt\",\n            \"postDate\": \"2023-01-05T15:25:13.756Z\",\n            \"rating\": 0,\n            \"numReviews\": 0,\n            \"numComments\": 0,\n            \"_id\": \"63b6ebd9d5bb8b47918c18a9\",\n            \"reviews\": [],\n            \"comments\": [],\n            \"createdAt\": \"2023-01-05T15:25:13.758Z\",\n            \"updatedAt\": \"2023-01-05T15:25:13.758Z\"\n        },\n        {\n            \"user\": \"63b4c8ef1fcb86b964ca1c19\",\n            \"postType\": \"txt\",\n            \"content\": \"contenttt\",\n            \"postDate\": \"2023-01-05T15:28:08.914Z\",\n            \"rating\": 0,\n            \"numReviews\": 0,\n            \"numComments\": 0,\n            \"_id\": \"63b6ec8864d7b24ca7f98340\",\n            \"reviews\": [],\n            \"comments\": [],\n            \"createdAt\": \"2023-01-05T15:28:08.920Z\",\n            \"updatedAt\": \"2023-01-05T15:28:08.920Z\"\n        },\n        {\n            \"user\": \"63b4c8ef1fcb86b964ca1c19\",\n            \"postType\": \"txt\",\n            \"content\": \"contenttt\",\n            \"postDate\": \"2023-01-05T15:28:22.588Z\",\n            \"rating\": 0,\n            \"numReviews\": 0,\n            \"numComments\": 0,\n            \"_id\": \"63b6ec9664d7b24ca7f9835c\",\n            \"reviews\": [],\n            \"comments\": [],\n            \"createdAt\": \"2023-01-05T15:28:22.593Z\",\n            \"updatedAt\": \"2023-01-05T15:28:22.593Z\"\n        }\n    ],\n    \"message\": \"community users fetched\"\n}"
+								}
+							]
+						},
+						{
+							"name": "single community post",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{usertoken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseurl}}community/singlePost/:cID/:pID",
+									"host": [
+										"{{baseurl}}community"
+									],
+									"path": [
+										"singlePost",
+										":cID",
+										":pID"
+									],
+									"variable": [
+										{
+											"key": "cID",
+											"value": "63b6e52ef072ec3250ea53b8",
+											"description": "community _id"
+										},
+										{
+											"key": "pID",
+											"value": "63b6eab11b59069861ea4aa8",
+											"description": "post _id"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "single community post",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "{{usertoken}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseurl}}community/singlePost/:cID/:pID",
+											"host": [
+												"{{baseurl}}community"
+											],
+											"path": [
+												"singlePost",
+												":cID",
+												":pID"
+											],
+											"variable": [
+												{
+													"key": "cID",
+													"value": "63b6e52ef072ec3250ea53b8",
+													"description": "community _id"
+												},
+												{
+													"key": "pID",
+													"value": "63b6eab11b59069861ea4aa8",
+													"description": "post _id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "321"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"141-0q27R6o+qA2av+qn2yALgmGfgk8\""
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 05 Jan 2023 15:34:14 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"apiStatus\": true,\n    \"data\": {\n        \"user\": \"63b4c8ef1fcb86b964ca1c19\",\n        \"postType\": \"txt\",\n        \"postDate\": \"2023-01-05T15:20:17.184Z\",\n        \"rating\": 0,\n        \"numReviews\": 0,\n        \"numComments\": 0,\n        \"_id\": \"63b6eab11b59069861ea4aa8\",\n        \"reviews\": [],\n        \"comments\": [],\n        \"createdAt\": \"2023-01-05T15:20:17.205Z\",\n        \"updatedAt\": \"2023-01-05T15:20:17.205Z\"\n    },\n    \"message\": \"post fetched\"\n}"
+								}
+							]
+						},
+						{
+							"name": "add community post",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{usertoken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"postType\":\"txt\",\r\n    \"content\":\"contenttt\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseurl}}community/addPost/63b6e52ef072ec3250ea53b8",
+									"host": [
+										"{{baseurl}}community"
+									],
+									"path": [
+										"addPost",
+										"63b6e52ef072ec3250ea53b8"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "add community post",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "{{usertoken}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"postType\":\"txt\",\r\n    \"content\":\"contenttt\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseurl}}community/addPost/63b6e52ef072ec3250ea53b8",
+											"host": [
+												"{{baseurl}}community"
+											],
+											"path": [
+												"addPost",
+												"63b6e52ef072ec3250ea53b8"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "2275"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"8e3-lZcTYDzwuVJEaMyqzBfrHopo15E\""
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 05 Jan 2023 15:28:22 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"apiStatus\": true,\n    \"data\": [\n        {\n            \"user\": \"63b4c8ef1fcb86b964ca1c19\",\n            \"postType\": \"txt\",\n            \"postDate\": \"2023-01-05T15:20:17.184Z\",\n            \"rating\": 0,\n            \"numReviews\": 0,\n            \"numComments\": 0,\n            \"_id\": \"63b6eab11b59069861ea4aa8\",\n            \"reviews\": [],\n            \"comments\": [],\n            \"createdAt\": \"2023-01-05T15:20:17.205Z\",\n            \"updatedAt\": \"2023-01-05T15:20:17.205Z\"\n        },\n        {\n            \"user\": \"63b4c8ef1fcb86b964ca1c19\",\n            \"postType\": \"txt\",\n            \"postDate\": \"2023-01-05T15:21:01.873Z\",\n            \"rating\": 0,\n            \"numReviews\": 0,\n            \"numComments\": 0,\n            \"_id\": \"63b6eadd8f01afb18ba569bb\",\n            \"reviews\": [],\n            \"comments\": [],\n            \"createdAt\": \"2023-01-05T15:21:01.892Z\",\n            \"updatedAt\": \"2023-01-05T15:21:01.892Z\"\n        },\n        {\n            \"user\": \"63b4c8ef1fcb86b964ca1c19\",\n            \"postType\": \"txt\",\n            \"postDate\": \"2023-01-05T15:21:45.015Z\",\n            \"rating\": 0,\n            \"numReviews\": 0,\n            \"numComments\": 0,\n            \"_id\": \"63b6eb096b89ecab068c3d0e\",\n            \"reviews\": [],\n            \"comments\": [],\n            \"createdAt\": \"2023-01-05T15:21:45.029Z\",\n            \"updatedAt\": \"2023-01-05T15:21:45.029Z\"\n        },\n        {\n            \"user\": \"63b4c8ef1fcb86b964ca1c19\",\n            \"postType\": \"txt\",\n            \"postDate\": \"2023-01-05T15:23:49.737Z\",\n            \"rating\": 0,\n            \"numReviews\": 0,\n            \"numComments\": 0,\n            \"_id\": \"63b6eb85d5bb8b47918c1876\",\n            \"reviews\": [],\n            \"comments\": [],\n            \"createdAt\": \"2023-01-05T15:23:49.760Z\",\n            \"updatedAt\": \"2023-01-05T15:23:49.760Z\"\n        },\n        {\n            \"user\": \"63b4c8ef1fcb86b964ca1c19\",\n            \"postType\": \"txt\",\n            \"postDate\": \"2023-01-05T15:24:34.022Z\",\n            \"rating\": 0,\n            \"numReviews\": 0,\n            \"numComments\": 0,\n            \"_id\": \"63b6ebb2d5bb8b47918c188f\",\n            \"reviews\": [],\n            \"comments\": [],\n            \"createdAt\": \"2023-01-05T15:24:34.029Z\",\n            \"updatedAt\": \"2023-01-05T15:24:34.029Z\"\n        },\n        {\n            \"user\": \"63b4c8ef1fcb86b964ca1c19\",\n            \"postType\": \"txt\",\n            \"postDate\": \"2023-01-05T15:25:13.756Z\",\n            \"rating\": 0,\n            \"numReviews\": 0,\n            \"numComments\": 0,\n            \"_id\": \"63b6ebd9d5bb8b47918c18a9\",\n            \"reviews\": [],\n            \"comments\": [],\n            \"createdAt\": \"2023-01-05T15:25:13.758Z\",\n            \"updatedAt\": \"2023-01-05T15:25:13.758Z\"\n        },\n        {\n            \"user\": \"63b4c8ef1fcb86b964ca1c19\",\n            \"postType\": \"txt\",\n            \"content\": \"contenttt\",\n            \"postDate\": \"2023-01-05T15:28:08.914Z\",\n            \"rating\": 0,\n            \"numReviews\": 0,\n            \"numComments\": 0,\n            \"_id\": \"63b6ec8864d7b24ca7f98340\",\n            \"reviews\": [],\n            \"comments\": [],\n            \"createdAt\": \"2023-01-05T15:28:08.920Z\",\n            \"updatedAt\": \"2023-01-05T15:28:08.920Z\"\n        },\n        {\n            \"user\": \"63b4c8ef1fcb86b964ca1c19\",\n            \"postType\": \"txt\",\n            \"content\": \"contenttt\",\n            \"postDate\": \"2023-01-05T15:28:22.588Z\",\n            \"rating\": 0,\n            \"numReviews\": 0,\n            \"numComments\": 0,\n            \"_id\": \"63b6ec9664d7b24ca7f9835c\",\n            \"reviews\": [],\n            \"comments\": [],\n            \"createdAt\": \"2023-01-05T15:28:22.593Z\",\n            \"updatedAt\": \"2023-01-05T15:28:22.593Z\"\n        }\n    ],\n    \"message\": \"post added successfully\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "all communities",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{usertoken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}community/",
+							"host": [
+								"{{baseurl}}community"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "all communities",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{usertoken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseurl}}community/",
+									"host": [
+										"{{baseurl}}community"
+									],
+									"path": [
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "375"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"177-i1aFgwYIn7W21uBL255NTP8lPLQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 05 Jan 2023 14:49:11 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"apiStatus\": true,\n    \"data\": [\n        {\n            \"_id\": \"63b6e092d037915540a96ac9\",\n            \"user\": \"63b4c8ef1fcb86b964ca1c19\",\n            \"name\": \"community one\",\n            \"image\": \"uploads/community/images/1672929426634laVie.jpg\",\n            \"level\": \"advanced\",\n            \"numPosts\": 0,\n            \"numUsers\": 0,\n            \"posts\": [],\n            \"users\": [],\n            \"createdAt\": \"2023-01-05T14:37:06.650Z\",\n            \"updatedAt\": \"2023-01-05T14:39:18.432Z\",\n            \"__v\": 0\n        }\n    ],\n    \"message\": \"communities fetched successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "single community",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{usertoken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}community/singleCommunity/63b6e092d037915540a96ac9",
+							"host": [
+								"{{baseurl}}community"
+							],
+							"path": [
+								"singleCommunity",
+								"63b6e092d037915540a96ac9"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "single community",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{usertoken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseurl}}community/singleCommunity/63b6e092d037915540a96ac9",
+									"host": [
+										"{{baseurl}}community"
+									],
+									"path": [
+										"singleCommunity",
+										"63b6e092d037915540a96ac9"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "371"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"173-MWhY/2e/kHYSyEIPkgnjdEZoUxo\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 05 Jan 2023 14:50:13 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"apiStatus\": true,\n    \"data\": {\n        \"_id\": \"63b6e092d037915540a96ac9\",\n        \"user\": \"63b4c8ef1fcb86b964ca1c19\",\n        \"name\": \"community one\",\n        \"image\": \"uploads/community/images/1672929426634laVie.jpg\",\n        \"level\": \"advanced\",\n        \"numPosts\": 0,\n        \"numUsers\": 0,\n        \"posts\": [],\n        \"users\": [],\n        \"createdAt\": \"2023-01-05T14:37:06.650Z\",\n        \"updatedAt\": \"2023-01-05T14:39:18.432Z\",\n        \"__v\": 0\n    },\n    \"message\": \"community fetched successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "my communities",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{usertoken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}community/myCommunities",
+							"host": [
+								"{{baseurl}}community"
+							],
+							"path": [
+								"myCommunities"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "my communities",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{usertoken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseurl}}community/myCommunities",
+									"host": [
+										"{{baseurl}}community"
+									],
+									"path": [
+										"myCommunities"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "375"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"177-i1aFgwYIn7W21uBL255NTP8lPLQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 05 Jan 2023 14:51:01 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"apiStatus\": true,\n    \"data\": [\n        {\n            \"_id\": \"63b6e092d037915540a96ac9\",\n            \"user\": \"63b4c8ef1fcb86b964ca1c19\",\n            \"name\": \"community one\",\n            \"image\": \"uploads/community/images/1672929426634laVie.jpg\",\n            \"level\": \"advanced\",\n            \"numPosts\": 0,\n            \"numUsers\": 0,\n            \"posts\": [],\n            \"users\": [],\n            \"createdAt\": \"2023-01-05T14:37:06.650Z\",\n            \"updatedAt\": \"2023-01-05T14:39:18.432Z\",\n            \"__v\": 0\n        }\n    ],\n    \"message\": \"communities fetched successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "add community",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{usertoken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "community plants",
+									"type": "text"
+								},
+								{
+									"key": "level",
+									"value": "beginner",
+									"type": "text"
+								},
+								{
+									"key": "img",
+									"type": "file",
+									"src": "/G:/Pics/Facebook/FB_IMG_1607887717086.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseurl}}community/addCommunity",
+							"host": [
+								"{{baseurl}}community"
+							],
+							"path": [
+								"addCommunity"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "add community",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{usertoken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "my comm",
+											"type": "text"
+										},
+										{
+											"key": "level",
+											"value": "beginner",
+											"type": "text"
+										},
+										{
+											"key": "img",
+											"type": "file",
+											"src": "/G:/Pics/Facebook/FB_IMG_1547500597403.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseurl}}community/addCommunity",
+									"host": [
+										"{{baseurl}}community"
+									],
+									"path": [
+										"addCommunity"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "363"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"16b-4dn8Rm6iGTFmwCN1bbnwOXdV1Hs\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 05 Jan 2023 14:37:06 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"apiStatus\": true,\n    \"data\": {\n        \"user\": \"63b4c8ef1fcb86b964ca1c19\",\n        \"name\": \"my comm\",\n        \"image\": \"uploads/community/images/1672929426634laVie.jpg\",\n        \"level\": \"beginner\",\n        \"numPosts\": 0,\n        \"numUsers\": 0,\n        \"_id\": \"63b6e092d037915540a96ac9\",\n        \"posts\": [],\n        \"users\": [],\n        \"createdAt\": \"2023-01-05T14:37:06.650Z\",\n        \"updatedAt\": \"2023-01-05T14:37:06.650Z\",\n        \"__v\": 0\n    },\n    \"message\": \"community added successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "edit community",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{usertoken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"community one\",\r\n    \"level\":\"advanced\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}community/editCommunity/63b6e092d037915540a96ac9",
+							"host": [
+								"{{baseurl}}community"
+							],
+							"path": [
+								"editCommunity",
+								"63b6e092d037915540a96ac9"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "edit community",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{usertoken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"community one\",\r\n    \"level\":\"advanced\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseurl}}community/editCommunity/63b6e092d037915540a96ac9",
+									"host": [
+										"{{baseurl}}community"
+									],
+									"path": [
+										"editCommunity",
+										"63b6e092d037915540a96ac9"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "358"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"166-b++oemvZa1Aec52VpWT0F6pxXZQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 05 Jan 2023 14:39:19 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"apiStatus\": true,\n    \"data\": {\n        \"_id\": \"63b6e092d037915540a96ac9\",\n        \"user\": \"63b4c8ef1fcb86b964ca1c19\",\n        \"name\": \"community one\",\n        \"image\": \"uploads/community/images/1672929426634laVie.jpg\",\n        \"level\": \"advanced\",\n        \"numPosts\": 0,\n        \"numUsers\": 0,\n        \"posts\": [],\n        \"users\": [],\n        \"createdAt\": \"2023-01-05T14:37:06.650Z\",\n        \"updatedAt\": \"2023-01-05T14:39:18.432Z\",\n        \"__v\": 0\n    },\n    \"message\": \"community updated\"\n}"
+						}
+					]
+				},
+				{
+					"name": "delete community",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{usertoken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}community/deleteCommunity/63b6e092d037915540a96ac9",
+							"host": [
+								"{{baseurl}}community"
+							],
+							"path": [
+								"deleteCommunity",
+								"63b6e092d037915540a96ac9"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "delete community",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{usertoken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseurl}}community/deleteCommunity/63b6e092d037915540a96ac9",
+									"host": [
+										"{{baseurl}}community"
+									],
+									"path": [
+										"deleteCommunity",
+										"63b6e092d037915540a96ac9"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "60"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3c-5X9MdJOHDifMEd3xBLI8Gp5Gu5c\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 05 Jan 2023 14:51:15 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"apiStatus\": true,\n    \"data\": null,\n    \"message\": \"community deleted\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Recommendations",
+			"item": [
+				{
+					"name": "Products Recommendations",
+					"item": [
+						{
+							"name": "plants recommendations",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{usertoken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseurl}}product/recommendations/plant",
+									"host": [
+										"{{baseurl}}product"
+									],
+									"path": [
+										"recommendations",
+										"plant"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "seeds recommendations",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2IzMWJlZWVkZmM5M2IyMTE2NTljOTYiLCJpYXQiOjE2NzI2ODI1NTR9.5IXPCj5xvgJ6-nocUZdTKlFw9vr6nwQG2AitjgVcMIg",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseurl}}product/recommendations/seed",
+									"host": [
+										"{{baseurl}}product"
+									],
+									"path": [
+										"recommendations",
+										"seed"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "quizes recommendations",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{usertoken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}quiz/recommendations",
+							"host": [
+								"{{baseurl}}quiz"
+							],
+							"path": [
+								"recommendations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "communities recommendations",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{usertoken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}community/recommendations",
+							"host": [
+								"{{baseurl}}community"
+							],
+							"path": [
+								"recommendations"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "communities recommendations",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{usertoken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseurl}}community/recommendations",
+									"host": [
+										"{{baseurl}}community"
+									],
+									"path": [
+										"recommendations"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "475"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1db-lf7LdHUsY6P1QmBzKUKYVirVZXM\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 05 Jan 2023 15:00:49 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"apiStatus\": true,\n    \"data\": [\n        {\n            \"_id\": \"63b6e52ef072ec3250ea53b8\",\n            \"user\": \"63b4c8ef1fcb86b964ca1c19\",\n            \"name\": \"my comm\",\n            \"image\": \"uploads/community/images/1672930606590laVie.jpg\",\n            \"level\": \"beginner\",\n            \"numPosts\": 0,\n            \"numUsers\": 1,\n            \"posts\": [],\n            \"users\": [\n                {\n                    \"user\": \"63b4c8ef1fcb86b964ca1c19\",\n                    \"joinDate\": \"2023-01-05T14:57:09.916Z\",\n                    \"_id\": \"63b6e545f072ec3250ea53cc\"\n                }\n            ],\n            \"createdAt\": \"2023-01-05T14:56:46.633Z\",\n            \"updatedAt\": \"2023-01-05T14:57:09.948Z\",\n            \"__v\": 1\n        }\n    ],\n    \"message\": \"communities fetched successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "blogsrecommendations",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{usertoken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}blog/recommendations",
+							"host": [
+								"{{baseurl}}blog"
+							],
+							"path": [
+								"recommendations"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "blogsrecommendations",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{usertoken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseurl}}blog/recommendations",
+									"host": [
+										"{{baseurl}}blog"
+									],
+									"path": [
+										"recommendations"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "571"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"23b-eAWBsz4nKhGJSRlPxfM7wSSi2Rk\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 05 Jan 2023 04:07:50 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"apiStatus\": true,\n    \"data\": [\n        {\n            \"_id\": \"63b64c0b71089cba3fdf3b07\",\n            \"user\": \"63b4c8ef1fcb86b964ca1c19\",\n            \"blogType\": \"txt\",\n            \"content\": \"plants\",\n            \"level\": \"beginner\",\n            \"rating\": 0,\n            \"numReviews\": 0,\n            \"reviews\": [],\n            \"createdAt\": \"2023-01-05T04:03:23.111Z\",\n            \"updatedAt\": \"2023-01-05T04:03:23.111Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"63b64c1b71089cba3fdf3b19\",\n            \"user\": \"63b4c8ef1fcb86b964ca1c19\",\n            \"blogType\": \"txt\",\n            \"content\": \"i love plants\",\n            \"level\": \"beginner\",\n            \"rating\": 0,\n            \"numReviews\": 0,\n            \"reviews\": [],\n            \"createdAt\": \"2023-01-05T04:03:39.909Z\",\n            \"updatedAt\": \"2023-01-05T04:03:39.909Z\",\n            \"__v\": 0\n        }\n    ],\n    \"message\": \"blogs fetched successfully\"\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseurl",
+			"value": "http://localhost:3000/api/",
+			"type": "string"
+		},
+		{
+			"key": "{{token}}",
+			"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2IxNzU2MWY4OWIyMDE4OTU1M2VkMmMiLCJpYXQiOjE2NzI1NzQ1NjR9.L7C2pn7aCmsvCV2VwSgZZNu7yg3zviMZnUq1xClVt2M"
+		},
+		{
+			"key": "token",
+			"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2IxNzU2MWY4OWIyMDE4OTU1M2VkMmMiLCJpYXQiOjE2NzI1NzQ1NjR9.L7C2pn7aCmsvCV2VwSgZZNu7yg3zviMZnUq1xClVt2M"
+		},
+		{
+			"key": "usertoken",
+			"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2IyYzQzNTMwN2QwYmE1ZDY4NTY3ODIiLCJpYXQiOjE2NzI2NjAwNzV9.h0je599pX0X60JncGc5AjOq_7k3SpINbluWHDaOZvls"
+		}
+	]
+}
