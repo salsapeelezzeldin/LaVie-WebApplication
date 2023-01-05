@@ -1,4 +1,6 @@
 const userModel = require("../../db/models/user.model")
+const productModel = require("../../db/models/product.model")
+
 const myHelper = require("../../app/helper")
 const mailHelper = require("../../app/sendmail.helper")
 const moment = require('moment');
@@ -398,10 +400,117 @@ class User{
 
 
     //   BookMarks
-    //   @description : Add an Item to the Shopping Cart
-    //   @method : POST /api/user/cart/addItem
-    //   @access : private/user
+    //   @description : Add Item to bookmarks
+    static addToBookMark = async(req,res)=>{
+        try
+        {
+            if(!req.user.bookMarks) req.user.bookMarks = []
+            const existedItem = req.user.bookMarks.find(mark => mark.bookMarkType == req.params.type && 
+                (mark.blog == req.params.id || mark.plant == req.params.id || 
+                mark.seed == req.params.id || mark.shop == req.params.id))
+            if(existedItem) throw new Error("already added")
 
+            let item
+            if (req.params.type == "blog"){
+                req.user.bookMarks.push({bookMarkType:"blog", blog:req.params.id})
+            } 
+            if (req.params.type == "plant"){
+                item = await productModel.findOne({_id:req.params.id, category:req.params.type})
+                if(!item) throw new Error("plant not found")
+                req.user.bookMarks.push({bookMarkType:"plant", plant:req.params.id})
+            } 
+            if (req.params.type == "seed"){
+                item = await productModel.findOne({_id:req.params.id, category:req.params.type})
+                if(!item) throw new Error("seed not found")
+                req.user.bookMarks.push({bookMarkType:"seed", seed:req.params.id})
+            }
+            if (req.params.type == "shop"){
+                item = await userModel.findOne({_id:req.params.id})
+                if(!item) throw new Error("shop not found")
+                req.user.bookMarks.push({bookMarkType:"shop", shop:req.params.id})
+            } 
+            await req.user.save()
+            await req.user.populate("bookMarks.blog")
+            await req.user.populate("bookMarks.plant")
+            await req.user.populate("bookMarks.seed")
+            await req.user.populate("bookMarks.shop")
+            myHelper.resHandler(res, 200, true, req.user.bookMarks, "bookmark added")
+        }
+        catch(e){
+            myHelper.resHandler(res, 500, false, e, e.message)
+        }
+    }
+    static myBookMarks = async(req,res)=>{
+        try
+        {
+            if(!req.user.bookMarks) req.user.bookMarks = []
+            await req.user.populate("bookMarks.blog")
+            await req.user.populate("bookMarks.plant")
+            await req.user.populate("bookMarks.seed")
+            await req.user.populate("bookMarks.shop")
+            myHelper.resHandler(res, 200, true, req.user.bookMarks, "bookmarks fetched")
+        }
+        catch(e){
+            myHelper.resHandler(res, 500, false, e, e.message)
+        }
+    }
+    static singleBookMark = async(req,res)=>{
+        try
+        {
+            if(!req.user.bookMarks) req.user.bookMarks = []
+            const bookMarked = await req.user.bookMarks.find(mark => mark._id == req.params.id)
+            if(!bookMarked) throw new Error("bookmark not found")
+        
+            await req.user.populate("bookMarks.blog")
+            await req.user.populate("bookMarks.plant")
+            await req.user.populate("bookMarks.seed")
+            await req.user.populate("bookMarks.shop")
+            myHelper.resHandler(res, 200, true, bookMarked, "bookmark fetched")
+        }
+        catch(e){
+            myHelper.resHandler(res, 500, false, e, e.message)
+        }
+    }
+    // static singleBookMark = async(req,res)=>{
+    //     try
+    //     {
+    //         if(!req.user.bookMarks) req.user.bookMarks = []
+    //         const bookMarked = await req.user.bookMarks.find(mark => mark.bookMarkType == req.params.type && 
+    //             (mark.blog == req.params.id || mark.plant == req.params.id || 
+    //             mark.seed == req.params.id || mark.shop == req.params.id))
+    //         if(!bookMarked) throw new Error("bookmark not found")
+            
+    //         if(req.params.type == "blog") await req.user.populate("bookMarks.blog")
+    //         if(req.params.type == "plant") await req.user.populate("bookMarks.plant")
+    //         if(req.params.type == "seed") await req.user.populate("bookMarks.seed")
+    //         if(req.params.type == "shop") await req.user.populate("bookMarks.shop")
+    //         myHelper.resHandler(res, 200, true, bookMarked, "bookmark fetched")
+    //     }
+    //     catch(e){
+    //         myHelper.resHandler(res, 500, false, e, e.message)
+    //     }
+    // }
+    static deleteBookMark = async(req,res)=>{
+        try
+        {
+            if(!req.user.bookMarks) req.user.bookMarks = []
+            let bookMarked, index
+            await req.user.bookMarks.forEach((mark,indx) =>{
+                if(mark._id == req.params.id){
+                    bookMarked = mark
+                    index = indx
+                }
+            })
+            if(!bookMarked) throw new Error("bookmark not found")
+            req.user.bookMarks.splice(index, 1)
+            await req.user.save()
+            myHelper.resHandler(res, 200, true, null, "bookmark deleted")
+        }
+        catch(e){
+            myHelper.resHandler(res, 500, false, e, e.message)
+        }
+    }
+    
 
     //   user Quizes
     //   @description : get all user taken quizes

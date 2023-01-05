@@ -130,25 +130,43 @@ const userSchema = mongoose.Schema({
         type: Number,
         default: 0.0
     },
-    // bookMarks: [{
-    //     products:[{
-    //         product: {
-    //             type: mongoose.Schema.Types.ObjectId,
-    //             required: true,
-    //             ref: 'Product'
-    //         }
-    //     }]
-    //     },
-    //     {
-    //     products:[{
-    //         product: {
-    //             type: mongoose.Schema.Types.ObjectId,
-    //             required: true,
-    //             ref: 'Product'
-    //         }
-    //     }]
-    //     }
-    // ],
+    bookMarks: [{
+        bookMarkType:{
+            type:String,
+            enum:["blog", "plant", "seed", "shop"],
+            required:true,
+            trim:true,
+            lowercase:true
+        },
+        blog:{
+            type: mongoose.Schema.Types.ObjectId,
+            //ref: 'Blog',
+            required: function(){
+                return this.bookMarkType=="blog"
+            }
+        },
+        plant:{
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Product',
+            required: function(){
+                return this.bookMarkType=="plant"
+            }
+        },
+        seed:{
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Product',
+            required: function(){
+                return this.bookMarkType=="seed"
+            }
+        },
+        shop:{
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'User',
+            required: function(){
+                return this.bookMarkType=="shop"
+            }
+        }
+    }],
     userQuizes: [{
         quiz: {
             type: mongoose.Schema.Types.ObjectId,

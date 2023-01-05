@@ -52,6 +52,7 @@ router.put("/edituser/:id",Auth.authentication, User.edituser)
 router.delete("/deleteUser/:id",Auth.authentication, User.deleteUser)
 
 
+//shopping cart
 //add item to shopping cart
 router.post("/cart/addItem/:id",Auth.authentication, User.addItemToCart)
 //delete item from shopping cart
@@ -61,9 +62,16 @@ router.delete("/cart/decreaseItem/:id",Auth.authentication, User.decreaseItemfro
 router.get("/cart/",Auth.authentication, User.getShoppingCart)
 
 
-
-//router.post("/bookMark/add",Auth.authentication, User.addBookMark)
-
+//BookMarks
+//add BookMark
+router.post("/bookMark/add/:type/:id",Auth.authentication, User.addToBookMark)
+//my BookMarks
+router.get("/bookMark",Auth.authentication, User.myBookMarks)
+//single BookMark
+//router.get("/bookMark/:type/:id",Auth.authentication, User.singleBookMark)
+router.get("/bookMark/:id",Auth.authentication, User.singleBookMark)
+//delete BookMark
+router.delete("/bookMark/:id",Auth.authentication, User.deleteBookMark)
 
 //Quizes
 //taken quizes
