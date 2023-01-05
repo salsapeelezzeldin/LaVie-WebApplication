@@ -140,7 +140,7 @@ const userSchema = mongoose.Schema({
         },
         blog:{
             type: mongoose.Schema.Types.ObjectId,
-            //ref: 'Blog',
+            ref: 'Blog',
             required: function(){
                 return this.bookMarkType=="blog"
             }

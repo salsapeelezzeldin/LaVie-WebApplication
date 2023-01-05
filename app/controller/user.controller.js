@@ -1,5 +1,6 @@
 const userModel = require("../../db/models/user.model")
 const productModel = require("../../db/models/product.model")
+const blogModel = require("../../db/models/blog.model")
 
 const myHelper = require("../../app/helper")
 const mailHelper = require("../../app/sendmail.helper")
@@ -431,6 +432,8 @@ class User{
 
             let item
             if (req.params.type == "blog"){
+                item = await blogModel.findOne({_id:req.params.id})
+                if(!item) throw new Error("blog not found")
                 req.user.bookMarks.push({bookMarkType:"blog", blog:req.params.id})
             } 
             if (req.params.type == "plant"){
@@ -444,7 +447,7 @@ class User{
                 req.user.bookMarks.push({bookMarkType:"seed", seed:req.params.id})
             }
             if (req.params.type == "shop"){
-                item = await userModel.findOne({_id:req.params.id})
+                item = await userModel.findOne({_id:req.params.id, roleName:"shop"})
                 if(!item) throw new Error("shop not found")
                 req.user.bookMarks.push({bookMarkType:"shop", shop:req.params.id})
             } 
