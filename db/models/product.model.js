@@ -36,7 +36,7 @@ const productSchema = mongoose.Schema({
     image: {
         type: String,
         trim:true,
-        //required: true
+        required: true
     },
     level:{
         type:String, 

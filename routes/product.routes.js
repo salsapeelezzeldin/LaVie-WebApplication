@@ -1,13 +1,14 @@
 const router = require("express").Router()
 const Product = require('../app/controller/product.controller')
 const Auth = require("../app/middleware/auth.middleware")
+const upload = require("../app/middleware/fileUpload.middleware")
 
 //all products
 router.get("/",Auth.authentication, Product.allProducts)
 //my products
 router.get("/myProducts",Auth.authentication, Product.myProducts)
 //add product
-router.post("/addProduct",Auth.authentication, Product.addProduct)
+router.post("/addProduct",Auth.authentication, upload.single("img"),Product.addProduct)
 //single product
 router.get("/singleProduct/:id",Auth.authentication, Product.singleProduct)
 //edit product

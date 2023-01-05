@@ -5,8 +5,6 @@ const myHelper = require("../../app/helper")
 const mailHelper = require("../../app/sendmail.helper")
 
 const fs = require("fs")
-const upload = require("../middleware/fileUpload.middleware")
-const multer = require("multer")
 const moment = require('moment')
 
 

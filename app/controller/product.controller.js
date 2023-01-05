@@ -1,7 +1,8 @@
 const productModel = require("../../db/models/product.model")
 const orderModel = require("../../db/models/order.model")
-
 const myHelper = require("../../app/helper")
+const fs = require("fs")
+
 
 class Product{
     //   @description : Get All Products Data
@@ -33,8 +34,13 @@ class Product{
     //   @access : private/shop 
     static addProduct = async(req,res) => {
         try{
+            if(!req.file) throw new Error("no file found")
+            const ext = req.file.originalname.split(".").pop()
+            const newName = "uploads/products/"+Date.now()+"testApp."+ext
+            fs.renameSync(req.file.path, newName)
             const productData = new productModel({
                 user: req.user._id,
+                image: newName,
                 ...req.body
             })
             await productData.save()
