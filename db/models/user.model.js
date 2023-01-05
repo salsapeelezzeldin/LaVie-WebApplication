@@ -32,10 +32,10 @@ const userSchema = mongoose.Schema({
     }, 
     roleName:{
         type:String,
-        required: true,
         trim:true,
         lowercase: true,
-        enum:["admin", "user", "professional engineer", "shop"]
+        default:"user",
+        enum:["admin", "user", "professional", "shop"]
     },
     isVarified:{
         type:Boolean,

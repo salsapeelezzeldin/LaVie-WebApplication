@@ -45,55 +45,50 @@ router.delete("/level",Auth.authentication, User.deleteLevel)
 
 //Manage Users
 //all Users
-router.get("/",Auth.authentication, User.allUsers)
+router.get("/",Auth.authentication, Auth.restrictTo("admin"), User.allUsers)
 //get single user
 router.get("/single/:id",Auth.authentication, User.singleUser)
 //add new user
-router.post("/adduser",Auth.authentication, User.adduser)
+router.post("/adduser",Auth.authentication, Auth.restrictTo("admin"), User.adduser)
 //edit other users
-router.put("/edituser/:id",Auth.authentication, User.edituser)
+router.put("/edituser/:id",Auth.authentication, Auth.restrictTo("admin"), User.edituser)
 //delete user
-router.delete("/deleteUser/:id",Auth.authentication, User.deleteUser)
+router.delete("/deleteUser/:id",Auth.authentication, Auth.restrictTo("admin"), User.deleteUser)
 
 
 //shopping cart
 //add item to shopping cart
-router.post("/cart/addItem/:id",Auth.authentication, User.addItemToCart)
+router.post("/cart/addItem/:id",Auth.authentication, Auth.restrictTo("user"), User.addItemToCart)
 //delete item from shopping cart
-router.delete("/cart/deleteItem/:id",Auth.authentication, User.deleteItem)
-router.delete("/cart/decreaseItem/:id",Auth.authentication, User.decreaseItemfromCart)
+router.delete("/cart/deleteItem/:id",Auth.authentication, Auth.restrictTo("user"), User.deleteItem)
+router.delete("/cart/decreaseItem/:id",Auth.authentication, Auth.restrictTo("user"), User.decreaseItemfromCart)
 //get shopping cart
-router.get("/cart/",Auth.authentication, User.getShoppingCart)
+router.get("/cart/",Auth.authentication, Auth.restrictTo("user"), User.getShoppingCart)
 
 
 //BookMarks
 //add BookMark
-router.post("/bookMark/add/:type/:id",Auth.authentication, User.addToBookMark)
+router.post("/bookMark/add/:type/:id",Auth.authentication, Auth.restrictTo("user"), User.addToBookMark)
 //my BookMarks
-router.get("/bookMark",Auth.authentication, User.myBookMarks)
+router.get("/bookMark",Auth.authentication, Auth.restrictTo("user"), User.myBookMarks)
 //single BookMark
+router.get("/bookMark/:id",Auth.authentication, Auth.restrictTo("user"), User.singleBookMark)
 //router.get("/bookMark/:type/:id",Auth.authentication, User.singleBookMark)
-router.get("/bookMark/:id",Auth.authentication, User.singleBookMark)
 //delete BookMark
-router.delete("/bookMark/:id",Auth.authentication, User.deleteBookMark)
+router.delete("/bookMark/:id",Auth.authentication, Auth.restrictTo("user"), User.deleteBookMark)
 
 //Quizes
 //taken quizes
-router.get("/quiz",Auth.authentication, User.takenQuizes)
+router.get("/quiz",Auth.authentication, Auth.restrictTo("user"), User.takenQuizes)
 //take a quiz
-router.post("/quiz/takeQuiz/:id",Auth.authentication, User.takeQuiz)
-// //get shopping cart
-// router.get("/cart/",Auth.authentication, User.getShoppingCart)
+router.post("/quiz/takeQuiz/:id",Auth.authentication, Auth.restrictTo("user"), User.takeQuiz)
 
 
 //Rewards
 //my rewards
-router.get("/reward/myRewards",Auth.authentication, User.myRewards)
+router.get("/reward/myRewards",Auth.authentication, Auth.restrictTo("user"), User.myRewards)
 //user rewards
-router.get("/rewards/:id",Auth.authentication, User.userRewards)
-
-
-
+router.get("/rewards/:id",Auth.authentication, Auth.restrictTo("user"), User.userRewards)
 
 
 module.exports = router

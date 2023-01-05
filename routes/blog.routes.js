@@ -6,15 +6,15 @@ const upload = require("../app/middleware/fileUpload.middleware")
 //all Blogs
 router.get("/",Auth.authentication, Blog.allBlogs)
 //my Blogs
-router.get("/myBlogs",Auth.authentication, Blog.myBlogs)
+router.get("/myBlogs",Auth.authentication, Auth.restrictTo("professional"), Blog.myBlogs)
 //add Blog
-router.post("/addBlog",Auth.authentication, upload.single("img"), Blog.addBlog)
+router.post("/addBlog",Auth.authentication, Auth.restrictTo("professional"), upload.single("img"), Blog.addBlog)
 //single Blog
 router.get("/singleBlog/:id",Auth.authentication, Blog.singleBlog)
 //edit Blog
-router.put("/editBlog/:id",Auth.authentication, Blog.editBlog)
+router.put("/editBlog/:id",Auth.authentication, Auth.restrictTo("professional"), Blog.editBlog)
 //delete Blog
-router.delete("/deleteBlog/:id",Auth.authentication, Blog.deleteBlog)
+router.delete("/deleteBlog/:id",Auth.authentication, Auth.restrictTo("professional"), Blog.deleteBlog)
 
 
 //Blog recommendations

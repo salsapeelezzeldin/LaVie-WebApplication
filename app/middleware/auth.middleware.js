@@ -20,11 +20,13 @@ class Auth{
             myHelper.resHandler(res, 500, false, e.message, "not authenticated")
         }
     }
-    static authorization = async (req, res, next) => {
-        try{
-        }
-        catch(e){
-            myHelper.resHandler(res, 500, false, e.message, "un authorized")
+    static restrictTo = (...roles)=>{
+        return(req, res, next) =>{
+            if(!roles.includes(req.user.roleName))
+            {
+                return myHelper.resHandler(res, 500, false, "un authorized", "you do not have permission")
+            }
+            next()
         }
     }
 }

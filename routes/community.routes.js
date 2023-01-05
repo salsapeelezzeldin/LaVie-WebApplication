@@ -6,15 +6,15 @@ const upload = require("../app/middleware/fileUpload.middleware")
 //all Communities
 router.get("/",Auth.authentication, Community.allCommunities)
 //my Communities
-router.get("/myCommunities",Auth.authentication, Community.myCommunities)
+router.get("/myCommunities",Auth.authentication,Auth.restrictTo("professional"), Community.myCommunities)
 //add Community
-router.post("/addCommunity",Auth.authentication, upload.single("img"), Community.addCommunity)
+router.post("/addCommunity",Auth.authentication,Auth.restrictTo("professional"), upload.single("img"), Community.addCommunity)
 //single Community
 router.get("/singleCommunity/:id",Auth.authentication, Community.singleCommunity)
 //edit Community
-router.put("/editCommunity/:id",Auth.authentication, Community.editCommunity)
+router.put("/editCommunity/:id",Auth.authentication, Auth.restrictTo("professional"), Community.editCommunity)
 //delete Community
-router.delete("/deleteCommunity/:id",Auth.authentication, Community.deleteCommunity)
+router.delete("/deleteCommunity/:id",Auth.authentication, Auth.restrictTo("professional"), Community.deleteCommunity)
 
 
 //Community recommendations
