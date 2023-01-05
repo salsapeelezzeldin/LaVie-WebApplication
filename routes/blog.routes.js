@@ -1,13 +1,14 @@
 const router = require("express").Router()
 const Blog = require('../app/controller/blog.controller')
 const Auth = require("../app/middleware/auth.middleware")
+const upload = require("../app/middleware/fileUpload.middleware")
 
 //all Blogs
 router.get("/",Auth.authentication, Blog.allBlogs)
 //my Blogs
 router.get("/myBlogs",Auth.authentication, Blog.myBlogs)
 //add Blog
-router.post("/addBlog",Auth.authentication, Blog.addBlog)
+router.post("/addBlog",Auth.authentication, upload.single("img"), Blog.addBlog)
 //single Blog
 router.get("/singleBlog/:id",Auth.authentication, Blog.singleBlog)
 //edit Blog

@@ -36,7 +36,7 @@ class Product{
         try{
             if(!req.file) throw new Error("no file found")
             const ext = req.file.originalname.split(".").pop()
-            const newName = "uploads/products/"+Date.now()+"testApp."+ext
+            const newName = "uploads/products/"+Date.now()+"laVie."+ext
             fs.renameSync(req.file.path, newName)
             const productData = new productModel({
                 user: req.user._id,

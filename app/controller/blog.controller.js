@@ -1,5 +1,6 @@
 const blogModel = require("../../db/models/blog.model")
 const myHelper = require("../../app/helper")
+const fs = require("fs")
 
 class Blog{
     //   @description : Get All Blogs Data
@@ -35,6 +36,14 @@ class Blog{
                 user: req.user._id,
                 ...req.body
             })
+            if(req.body.blogType != "txt")
+            { 
+                if(!req.file) throw new Error("no file found")
+                const ext = req.file.originalname.split(".").pop()
+                const newName = "uploads/blogs/"+Date.now()+"laVie."+ext
+                fs.renameSync(req.file.path, newName)
+                blogData.image = newName
+            }
             await blogData.save()
             myHelper.resHandler(res, 200, true, blogData, "blog added successfully")
         }

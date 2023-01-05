@@ -203,11 +203,11 @@ class User{
         try{
             if(!req.file) throw new Error("no file found")
             const ext = req.file.originalname.split(".").pop()
-            const newName = "uploads/"+Date.now()+"testApp."+ext
+            const newName = "uploads/profile"+Date.now()+"laVie."+ext
             fs.renameSync(req.file.path, newName)
             req.user.image = newName
             await req.user.save()
-            myHelper.resHandler(res, 200, true, req.user, "updated")
+            myHelper.resHandler(res, 200, true, req.user, "profile picture updated")
         }
         catch(e){
             myHelper.resHandler(res, 500, false, e, e.message)

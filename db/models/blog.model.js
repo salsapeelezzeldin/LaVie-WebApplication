@@ -41,7 +41,7 @@ const blogSchema = mongoose.Schema({
             return this.blogType=="txt"
         }
     },
-    file:{
+    image:{
         type:String,
         required: function(){
             return this.blogType!="txt"
